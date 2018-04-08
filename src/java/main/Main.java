@@ -44,9 +44,10 @@ public class Main extends JPanel {
 
         Criteria criteria = new Criteria();
 
+        criteria.averageSentences(files);
         //for each file find each criteria
-        for(int i=0;i<files.length;i++) {
+       /* for(int i=0;i<files.length;i++) {
             criteria.findLength(files[i]); //1. length
-        }
+        }*/
     }
 }
