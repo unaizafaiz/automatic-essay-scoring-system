@@ -1,5 +1,4 @@
-package main;
-
+import java.StanfordParser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -78,22 +77,51 @@ public class Criteria {
         String fileContents ="";
 
         while(sc.hasNextLine()){
+            //temp = sc.nextLine();
             fileContents += sc.nextLine();
         }
         sc.close();
 
+        //Cleaning the string to avoid sentences of the form " time.This"
+        String[] fileClean = fileContents.split("\\.");
+        fileContents = "";
+        for(int index=0; index<fileClean.length; index++) {
+            System.out.println(fileClean[index]);
+            fileContents += fileClean[index] + ". ";
+        }
+
+       //String fileContents = " Hi! My name is U. Faiz. How are you doing? ";
         //Tokenizing and POStagging the string
         StanfordParser sparser = new StanfordParser();
         List<String> tokens = sparser.tokenize(fileContents);
         List<String> posTags = sparser.posTagging(fileContents);
+       /* List<String> sentences = sparser.sentenceSplit(fileContents);
+        for (String sentence : sentences) {
+            length++;
+            System.out.print("[" + sentence + "] ");
+        }*/
 
-        for(String token: tokens){
+        for(int index = 0; index < tokens.size(); index++) {
+            String token = tokens.get(index);
+            String posTag = posTags.get(index);
+
+            System.out.print("[" + token + "/" + posTag + "] ");
+        }
+        for(String posTag: posTags){
            // System.out.println(token);
-            if(token.contains(".")||token.contains("?")||token.contains("!"))
+            if(posTag.equals("."))
                 length++;
         }
+        if(!posTags.get(posTags.size()-1).equals("."))
+            length++;
 
-       // System.out.println("Length of file "+filename.getName()+" is "+length);
+        System.out.println();
+       System.out.println("Length of file "+filename.getName()+" is "+length);
         return length;
+    }
+
+    public static void main(String[] args){
+        Criteria criteria = new Criteria();
+        int length = criteria.findLength(new File("./index.csv"));
     }
 }

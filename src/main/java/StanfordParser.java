@@ -1,9 +1,10 @@
-package main;
+package java;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.CoreMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,5 +50,32 @@ public class StanfordParser {
             posTagList.add(pos);
         }
         return posTagList;
+    }
+
+    public static List<String> sentenceSplit(String text) {
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize, ssplit");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // create an empty Annotation just with the given text
+        Annotation document = new Annotation(text);
+
+        // run all Annotators on this text
+        pipeline.annotate(document);
+        List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+
+        List<String> result = new ArrayList<String>();
+        for (CoreMap sentence : sentences) {
+            String sentenceString = sentence.get(CoreAnnotations.TextAnnotation.class);
+            result.add(sentenceString);
+
+            // see tokenize(String) method
+            List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
+            for (CoreLabel token : tokens) {
+                String word = token.get(CoreAnnotations.TextAnnotation.class);
+            }
+        }
+
+        return result;
     }
 }
