@@ -1,5 +1,7 @@
 package main;
 
+import com.nlp.autoscoring.parser.StanfordParser;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
