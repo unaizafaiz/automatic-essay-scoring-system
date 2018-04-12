@@ -1,9 +1,10 @@
-package java;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.trees.Tree;
+import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class StanfordParser {
         return posTagList;
     }
 
-    public static List<String> sentenceSplit(String text) {
+    public  List<String> sentenceSplit(String text) {
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize, ssplit");
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -74,6 +75,27 @@ public class StanfordParser {
             for (CoreLabel token : tokens) {
                 String word = token.get(CoreAnnotations.TextAnnotation.class);
             }
+        }
+
+        return result;
+    }
+
+    public  List<Tree> parse(String text) {
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize, ssplit, pos, lemma, parse");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // create an empty Annotation just with the given text
+        Annotation document = new Annotation(text);
+
+        // run all Annotators on this text
+        pipeline.annotate(document);
+        List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+
+        List<Tree> result = new ArrayList<Tree>();
+        for (CoreMap sentence : sentences) {
+            Tree tree = sentence.get(TreeCoreAnnotations.TreeAnnotation.class);
+            result.add(tree);
         }
 
         return result;

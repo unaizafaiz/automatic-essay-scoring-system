@@ -1,14 +1,20 @@
-import java.StanfordParser;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Criteria {
 
-    public void averageSentences(File[] files){
+   /* public Criteria(File[] files){
+
+    }*/
+
+
+    public void findCriteriaAndScore(File[] files){
+        LengthOfEssay lengthOfEssay = new LengthOfEssay();
         Scanner scanner = null;
         HashMap<String, String> fileGrades = new HashMap<>();
 
@@ -26,102 +32,50 @@ public class Criteria {
         }
         scanner.close();
 
-        //Calculating average no. of sentences in the essays marked as low
-        float averageLow,  totalLow = 0;
-        float sumLow = 0;
-        for (Map.Entry<String, String> fileGrade: fileGrades.entrySet()) {
-            if(fileGrade.getValue().equals("low")){
-                sumLow += findLength(new File("./essays/"+fileGrade.getKey()));
-                totalLow++;
-            }
+        //getting average scores for all low and high essays in the training corpus
+       /* float averageLow = Math.round(lengthOfEssay.averageLength(fileGrades, "low"));
+        float averageHigh = Math.round(lengthOfEssay.averageLength(fileGrades, "high"));
 
-        }
-        if(totalLow!=0)
-            averageLow = sumLow/totalLow;
-        else
-            averageLow = 0;
-
-        //Calculating average no. of sentences in the essays marked as high
-        float averageHigh = 0;
-        float sumHigh = 0;
-        float totalHigh = 0;
-        for (Map.Entry<String, String> fileGrade: fileGrades.entrySet()) {
-            if(fileGrade.getValue().equals("high")){
-                sumHigh += findLength(new File("./essays/"+fileGrade.getKey()));
-                totalHigh++;
-            }
-
-        }
-        if(totalLow!=0)
-            averageHigh = sumHigh/totalHigh;
-        else
-            averageHigh = 0;
-
-        System.out.println("Average length of low grades is "+sumLow+"/"+totalLow+"="+averageLow);
-        System.out.println("Average length of high grades is "+sumHigh+"/"+totalHigh+"="+averageHigh);
-
-    }
-
-    public int findLength(File filename)  {
-        int length=0;
-
-        //Reading file contents into a string
-        Scanner sc = null;
-
+        float length;
+        float score;
+        System.out.println("Average - low: "+averageLow+" | high - "+averageHigh);
+        PrintWriter writer = null;
         try {
-            sc = new Scanner(filename);
+            writer = new PrintWriter("essaygrades.csv", "UTF-8");
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 
-        String fileContents ="";
-
-        while(sc.hasNextLine()){
-            //temp = sc.nextLine();
-            fileContents += sc.nextLine();
+*/
+        for(File file: files) {
+            Preprocessing preprocessing = new Preprocessing();
+            String fileContents = preprocessing.cleanFile(file);
+            //length = (float) lengthOfEssay.findLengthOfEssay(fileContents);
+           // score = scoreLength(length,averageHigh,averageLow);
+            Syntax syntax = new Syntax();
+            syntax.findMissingVerb(fileContents);
+           // writer.println(file+";"+length+";"+score);
         }
-        sc.close();
-
-        //Cleaning the string to avoid sentences of the form " time.This"
-        String[] fileClean = fileContents.split("\\.");
-        fileContents = "";
-        for(int index=0; index<fileClean.length; index++) {
-            System.out.println(fileClean[index]);
-            fileContents += fileClean[index] + ". ";
-        }
-
-       //String fileContents = " Hi! My name is U. Faiz. How are you doing? ";
-        //Tokenizing and POStagging the string
-        StanfordParser sparser = new StanfordParser();
-        List<String> tokens = sparser.tokenize(fileContents);
-        List<String> posTags = sparser.posTagging(fileContents);
-       /* List<String> sentences = sparser.sentenceSplit(fileContents);
-        for (String sentence : sentences) {
-            length++;
-            System.out.print("[" + sentence + "] ");
-        }*/
-
-        for(int index = 0; index < tokens.size(); index++) {
-            String token = tokens.get(index);
-            String posTag = posTags.get(index);
-
-            System.out.print("[" + token + "/" + posTag + "] ");
-        }
-        for(String posTag: posTags){
-           // System.out.println(token);
-            if(posTag.equals("."))
-                length++;
-        }
-        if(!posTags.get(posTags.size()-1).equals("."))
-            length++;
-
-        System.out.println();
-       System.out.println("Length of file "+filename.getName()+" is "+length);
-        return length;
+       // writer.close();
     }
 
-    public static void main(String[] args){
-        Criteria criteria = new Criteria();
-        int length = criteria.findLength(new File("./index.csv"));
+    private float scoreLength(float length, float averageHigh, float averageLow) {
+        float score=1;
+
+        if(length<10)
+            score = 1;
+        else {
+            if (length>=averageHigh)
+                score = 5;
+            else if(length<averageHigh && length >= (averageHigh+averageLow)/2)
+                score = 4;
+            else if(length>=averageLow && length<(averageHigh+averageLow)/2)
+                score = 3;
+            else if(length<averageLow)
+                score = 2;
+        }
+        return score;
     }
 }
