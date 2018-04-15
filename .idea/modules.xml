@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Automatic-Scoring-System.iml" filepath="$PROJECT_DIR$/.idea/Automatic-Scoring-System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Automatic-Scoring-System.iml" filepath="$PROJECT_DIR$/Automatic-Scoring-System.iml" />
     </modules>
   </component>
 </project>
