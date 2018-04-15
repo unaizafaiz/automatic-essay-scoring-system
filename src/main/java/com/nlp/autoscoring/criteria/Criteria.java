@@ -1,4 +1,4 @@
-package main;
+package com.nlp.autoscoring.criteria;
 
 import com.nlp.autoscoring.parser.StanfordParser;
 

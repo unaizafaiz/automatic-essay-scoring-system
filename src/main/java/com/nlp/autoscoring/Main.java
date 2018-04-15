@@ -1,35 +1,14 @@
-package main;
+package com.nlp.autoscoring;
+
+import com.nlp.autoscoring.agreement.SentenceAgreement;
+import com.nlp.autoscoring.criteria.Criteria;
+import com.nlp.autoscoring.spelling.SpellingChecker;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.logging.RedwoodConfiguration;
 
 import javax.swing.*;
 import java.io.File;
-
-class FileChooser extends JPanel{
-    public File[] getInput(){
-
-
-        //Create and set up the window.
-        JFrame frame = new JFrame("File Chooser");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JFileChooser chooser = new JFileChooser();
-
-        //Add content to the window.
-        frame.add(new FileChooser());
-
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
-        chooser.setMultiSelectionEnabled(true);
-
-        // Show the dialog; wait until dialog is closed
-        chooser.showOpenDialog(frame);
-
-        // Retrieve the selected files.
-        File[] files = chooser.getSelectedFiles();
-        frame.dispose();
-        return files;
-    }
-}
+import java.io.IOException;
 
 public class Main extends JPanel {
 
@@ -37,7 +16,9 @@ public class Main extends JPanel {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
+
+
 
         FileChooser fs = new FileChooser();
         File[] files = fs.getInput();
@@ -46,10 +27,11 @@ public class Main extends JPanel {
         SpellingChecker spellingChecker = new SpellingChecker();
 
         //for each file find each criteria
-        for(int i=0;i<files.length;i++) {
-            criteria.findLength(files[i]); //1. length
-            spellingChecker.countSpellingMistakes(files[i]);
-
+        for(File file : files) {
+            String fileContent = FileToStringConverter.toStringConverter(file);
+        //    criteria.findLength(file); //1. length
+        //    spellingChecker.countSpellingMistakes(fileContent);
+            SentenceAgreement.countAgreementFailures(fileContent);
         }
     }
 }
