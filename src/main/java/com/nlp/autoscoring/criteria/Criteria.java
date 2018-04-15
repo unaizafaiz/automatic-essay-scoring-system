@@ -1,23 +1,86 @@
 package com.nlp.autoscoring.criteria;
 
+import com.nlp.autoscoring.agreement.SentenceAgreement;
 import com.nlp.autoscoring.length.LengthOfEssay;
 import com.nlp.autoscoring.length.Preprocessing;
+import com.nlp.autoscoring.spelling.SpellingChecker;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Criteria {
 
-   /* public Criteria(File[] files){
-    }*/
+    PrintWriter trainingSet;
+    float averageLow, averageHigh;
+    float maxSpellingMistake = 25, minSpellingMistake = 0, mistakeTotal;
+    float averageSpellingMistake;
+    int maxagreement=28, minagreement=1, agreementTotal;
+    float averageAgreement;
+    int maxmissingbverb=3, minmissingbverb=0, missingbverbTotal;
+    float averagemissingbverb;
+
+
+    public Criteria(){
+        try {
+            trainingSet = new PrintWriter("trainingSet.csv", "UTF-8");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public float evaluatingTrainingSet(HashMap<String, String> fileGrades, String classType){
+
+        Preprocessing preprocessing = new Preprocessing();
+        LengthOfEssay lengthOfEssay = new LengthOfEssay();
+        SpellingChecker spellingChecker = new SpellingChecker();
+        SentenceAgreement sentenceAgreement = new SentenceAgreement();
+        float average,  total = 0;
+        float sum = 0;
+        float length;
+        String tempVerb;
+        int tSpellingMistake, tAgreementCount, tMissingVerb;
+
+
+        for (Map.Entry<String, String> fileGrade: fileGrades.entrySet()) {
+            if(fileGrade.getValue().equals(classType)){
+                String fileContents = preprocessing.cleanFile(new File("./src/main/resources/essays_dataset/essays/"+fileGrade.getKey()));
+                length = lengthOfEssay.findLengthOfEssay(fileContents);
+                sum += length;
+                total++;
+                String[] mistake = spellingChecker.countSpellingMistakes(fileContents).split(" ");
+                tSpellingMistake= Integer.parseInt(mistake[0]);
+                int wordCount = Integer.parseInt(mistake[1]);
+                String[] temp = sentenceAgreement.countAgreementFailures(fileContents).split(" ");
+                tAgreementCount = Integer.parseInt(temp[0]);
+                tMissingVerb = Integer.parseInt(temp[1]);
+                int sentenceCount = Integer.parseInt(temp[2]);
+              /*  scoreMistakes = findScore(spellingmistake,wordCount,"b");
+                scoreAgreement = findScore(agreement,sentenceCount, "c1");
+                scoreMissingVerb = findScore(missingVerb,sentenceCount,"c2");*/
+                trainingSet.println(fileGrade.getKey()+";"+length+";"+tSpellingMistake+";"+tAgreementCount+";"+tMissingVerb);
+            }
+        }
+        if(total!=0)
+            average = sum/total;
+        else
+            average = 0;
+
+        return average;
+    }
 
 
     public void findCriteriaAndScore(File[] files){
         LengthOfEssay lengthOfEssay = new LengthOfEssay();
+        SpellingChecker spellingChecker = new SpellingChecker();
+        SentenceAgreement sentenceAgreement = new SentenceAgreement();
+
         Scanner scanner = null;
         HashMap<String, String> fileGrades = new HashMap<>();
 
@@ -36,11 +99,19 @@ public class Criteria {
         scanner.close();
 
         //getting average scores for all low and high essays in the training corpus
-        float averageLow = Math.round(lengthOfEssay.averageLength(fileGrades, "low"));
-        float averageHigh = Math.round(lengthOfEssay.averageLength(fileGrades, "high"));
+        averageLow = Math.round(evaluatingTrainingSet(fileGrades, "low"));
+        averageHigh = Math.round(evaluatingTrainingSet(fileGrades, "high"));
+        trainingSet.close();
+
         float length;
-        float score;
-        System.out.println("Average - low: "+averageLow+" | high - "+averageHigh);
+        float scoreLength, scoreMistakes,scoreAgreement,scoreMissingVerb;
+        int spellingmistake;
+        String verbCounts;
+        int agreement, missingVerb;
+        float finalScore=0;
+        int wordCount,sentenceCount;
+
+       // System.out.println("Average - low: "+averageLow+" | high - "+averageHigh);
         PrintWriter writer = null;
         try {
             writer = new PrintWriter("essaygrades.csv", "UTF-8");
@@ -54,9 +125,20 @@ public class Criteria {
             Preprocessing preprocessing = new Preprocessing();
             String fileContents = preprocessing.cleanFile(file);
             length = (float) lengthOfEssay.findLengthOfEssay(fileContents);
-            score = scoreLength(length,averageHigh,averageLow);
-            writer.println(file.getName()+";"+length+";"+score+";");
-
+            scoreLength = scoreLength(length,averageHigh,averageLow);
+            String[] mistake = spellingChecker.countSpellingMistakes(fileContents).split(" ");
+            spellingmistake = Integer.parseInt(mistake[0]);
+            wordCount = Integer.parseInt(mistake[1]);
+            verbCounts = sentenceAgreement.countAgreementFailures(fileContents);
+            String[] temp = verbCounts.split(" ");
+            agreement = Integer.parseInt(temp[0]);
+            missingVerb = Integer.parseInt(temp[1]);
+            sentenceCount = Integer.parseInt(temp[2]);
+            scoreMistakes = findScore(spellingmistake,wordCount,"b");
+            scoreAgreement = findScore(agreement,sentenceCount, "c1");
+            scoreMissingVerb = findScore(missingVerb,sentenceCount,"c2");
+            String finalGrade = "L|H";
+            writer.println(file.getName()+";"+scoreLength+";"+scoreMistakes+";"+scoreAgreement+";"+scoreMissingVerb+";0;0;"+finalScore+";"+finalGrade);
         }
          writer.close();
     }
@@ -78,5 +160,18 @@ public class Criteria {
         }
         return score;
     }
+
+    public float findScore(int value, int total, String criteria){
+        float score= value/ (float) total;
+       /* if(criteria.equals("b")){
+
+        }
+        else{
+            temp = (temp * 4)+1;
+        }*/
+
+        return score;
+    }
+
 
 }

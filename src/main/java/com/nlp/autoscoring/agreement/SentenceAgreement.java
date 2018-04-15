@@ -14,7 +14,7 @@ public class SentenceAgreement {
 
     private static final Set<String> verbTags = Sets.newHashSet("VB", "VBZ", "VBP", "VBD", "VBN", "VBG");
 
-    public static void countAgreementFailures(String file){
+    public String countAgreementFailures(String file){
         int count = 0;
         int vCount = 0;
         List<String> sentences = StanfordParser.sentenceSplit(file);
@@ -30,8 +30,10 @@ public class SentenceAgreement {
                 count++;
             }
         }
-        System.out.println(count);
+        /*System.out.println(count);
         System.out.println(vCount);
-        System.out.println(sentences.size());
+        System.out.println(sentences.size());*/
+
+        return count+" "+vCount+" "+sentences.size();
     }
 }

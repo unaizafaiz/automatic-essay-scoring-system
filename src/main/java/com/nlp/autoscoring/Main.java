@@ -22,8 +22,6 @@ public class Main extends JPanel {
         File[] files = fs.getInput();
 
         Criteria criteria = new Criteria();
-        SpellingChecker spellingChecker = new SpellingChecker();
-
         criteria.findCriteriaAndScore(files);
 
         //for each file find each criteria

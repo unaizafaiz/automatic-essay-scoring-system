@@ -27,19 +27,26 @@ public class SpellingChecker {
         }
     }
 
-    public void countSpellingMistakes(String fileName) throws IOException {
-        int mistakesCount = 0;
+    public String countSpellingMistakes(String fileName){
+        int mistakesCount = 0 ;
         List<String> tokenizedFileContents = StanfordParser.tokenize(fileName);
         List<String> posTaggedFileContents;
         posTaggedFileContents = StanfordParser.posTagging(fileName);
+        int wordCount = posTaggedFileContents.size();
+        Set<String> tags = Sets.newHashSet("$","#","\"","(",")",",",".",":");
         //List<edu.stanford.nlp.trees.Tree> structure = StanfordParser.parse(fileContents);
         //System.out.println(structure);
+        for(String posTag: posTaggedFileContents){
+            if(tags.contains(posTag))
+                wordCount--;
+        }
         for(String word : tokenizedFileContents){
             if(!dictionary.contains(word) && !wordStopper.contains(word) && posTaggedFileContents.get(tokenizedFileContents.indexOf(word)).equals("NN")){
                 mistakesCount++;
             }
         }
 
-        System.out.println(mistakesCount);
+        //System.out.println(mistakesCount);
+        return mistakesCount+" "+wordCount;
     }
 }
