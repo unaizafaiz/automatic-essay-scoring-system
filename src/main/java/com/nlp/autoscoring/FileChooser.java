@@ -37,5 +37,5 @@ class FileChooser extends JPanel {
         frame.dispose();
         return files;
     }
-}
 
+}

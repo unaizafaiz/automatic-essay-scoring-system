@@ -6,19 +6,17 @@ import com.nlp.autoscoring.spelling.SpellingChecker;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.logging.RedwoodConfiguration;
 
+
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
+
+
 public class Main extends JPanel {
 
-    private static void printOutput(){
 
-    }
-
-    public static void main(String[] args) throws IOException {
-
-
+    public static void main(String[] args){
 
         FileChooser fs = new FileChooser();
         File[] files = fs.getInput();
@@ -26,12 +24,19 @@ public class Main extends JPanel {
         Criteria criteria = new Criteria();
         SpellingChecker spellingChecker = new SpellingChecker();
 
+        criteria.findCriteriaAndScore(files);
+
         //for each file find each criteria
-        for(File file : files) {
-            String fileContent = FileToStringConverter.toStringConverter(file);
-        //    criteria.findLength(file); //1. length
-        //    spellingChecker.countSpellingMistakes(fileContent);
-            SentenceAgreement.countAgreementFailures(fileContent);
-        }
+        /*for(File file : files) {
+           *//* String fileContent = null;
+            try {
+                fileContent = FileToStringConverter.toStringConverter(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*//*
+              //1. length
+            //    spellingChecker.countSpellingMistakes(fileContent);
+            //SentenceAgreement.countAgreementFailures(fileContent);
+        }*/
     }
 }

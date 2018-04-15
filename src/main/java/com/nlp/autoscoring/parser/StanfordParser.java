@@ -86,4 +86,25 @@ public class StanfordParser {
         return result;
     }
 
+
+    public  List<Tree> parse(String text) {
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize, ssplit, pos, lemma, parse");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // create an empty Annotation just with the given text
+        Annotation document = new Annotation(text);
+
+        // run all Annotators on this text
+        pipeline.annotate(document);
+        List<CoreMap> sentences = document.get(CoreAnnotations.SentencesAnnotation.class);
+
+        List<Tree> result = new ArrayList<Tree>();
+        for (CoreMap sentence : sentences) {
+            Tree tree = sentence.get(TreeCoreAnnotations.TreeAnnotation.class);
+            result.add(tree);
+        }
+
+        return result;
+    }
 }
