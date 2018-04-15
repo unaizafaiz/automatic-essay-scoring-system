@@ -1,14 +1,16 @@
+package com.nlp.autoscoring.length;
+
+import com.nlp.autoscoring.parser.StanfordParser;
 import edu.stanford.nlp.trees.Tree;
-import edu.stanford.nlp.util.StringUtils;
+
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 public class LengthOfEssay {
+
     public float averageLength(HashMap<String, String> fileGrades, String classType){
 
         float average,  total = 0;
@@ -48,10 +50,6 @@ public class LengthOfEssay {
                 String strTree = tree.toString();
                 strTree = strTree.replace('(', '[');
                 strTree = strTree.replace(')', ']');
-                //System.out.println(strTree);
-               // countSentences += findOccurence(strTree);
-
-          //  int count=0;
 
             if(strTree.contains("[S")) {
                 countSentences++;
@@ -94,40 +92,10 @@ public class LengthOfEssay {
         }
 
 
-       // System.out.println(countSentences);
+
         return countSentences;
     }
 
-    private int findOccurence(String strTree) {
-        int count=0;
-
-        if(strTree.contains("[S")) {
-            count++;
-
-            String[] splitStr = strTree.split(" ");
-
-            Map<String, Integer> tagCount = new HashMap<>();
-            for (int i = 0; i < splitStr.length; i++) {
-                if (splitStr[i].equals("[VBP") || splitStr[i].equals("[CC")) {
-                    if (tagCount.containsKey(splitStr[i])) {
-                        // Map already contains the word key. Just increment it's count by 1
-                        tagCount.put(splitStr[i], tagCount.get(splitStr[i]) + 1);
-                    } else {
-                        // Map doesn't have mapping for word. Add one with count = 1
-                        tagCount.put(splitStr[i], 1);
-                    }
-                }
-            }
-
-            if (tagCount.containsKey("[VBP") || tagCount.containsKey("[CC"))
-                if(tagCount.get("[VBP")>1) {
-                    count += tagCount.get("[VBP") - 1;
-                }
-                count +=tagCount.get("[CC");
-        }
-
-        return count;
-    }
 
     public static void main(String[] args){
         LengthOfEssay lengthOfEssay = new LengthOfEssay();

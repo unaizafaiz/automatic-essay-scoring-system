@@ -1,3 +1,5 @@
+package com.nlp.autoscoring.length;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -21,8 +23,6 @@ public class Preprocessing {
         }
         sc.close();
 
-        //   System.out.println("---Before----\n"+fileContents);
-
         //Replace all more than occurence of ?,!, . with a single occurence
         fileContents = fileContents.replaceAll("\\?+","?");
         fileContents = fileContents.replaceAll("(!+)", "!");
@@ -34,18 +34,6 @@ public class Preprocessing {
         fileContents = addSpaces(fileContents, "!","!");
         fileContents = addSpaces(fileContents, ",",",");
         fileContents = addSpaces(fileContents, ";",";");
-
-
-        /*Boolean lastSentComplete = false;
-        int indexOfFullStop = fileContents.lastIndexOf(".");
-        if(indexOfFullStop==(fileContents.length()-1)){
-            lastSentComplete = true;
-        }
-        if(lastSentComplete) {
-            fileContents += ".";
-        }*/
-
-        // System.out.println("---After----\n"+fileContents);
 
         return fileContents;
     }

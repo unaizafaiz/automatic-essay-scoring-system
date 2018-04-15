@@ -1,3 +1,6 @@
+package com.nlp.autoscoring.criteria;
+
+import com.nlp.autoscoring.length.Preprocessing;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -53,12 +56,10 @@ public class Criteria {
             Preprocessing preprocessing = new Preprocessing();
             String fileContents = preprocessing.cleanFile(file);
             //length = (float) lengthOfEssay.findLengthOfEssay(fileContents);
-           // score = scoreLength(length,averageHigh,averageLow);
-            Syntax syntax = new Syntax();
-            syntax.findMissingVerb(fileContents);
-           // writer.println(file+";"+length+";"+score);
+            // score = scoreLength(length,averageHigh,averageLow);
+
         }
-       // writer.close();
+        // writer.close();
     }
 
     private float scoreLength(float length, float averageHigh, float averageLow) {
@@ -77,5 +78,8 @@ public class Criteria {
                 score = 2;
         }
         return score;
+    }
+
+    private class LengthOfEssay {
     }
 }
