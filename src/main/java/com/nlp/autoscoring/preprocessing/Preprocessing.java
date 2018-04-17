@@ -1,4 +1,4 @@
-package com.nlp.autoscoring.length;
+package com.nlp.autoscoring.preprocessing;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,7 +39,7 @@ public class Preprocessing {
     }
 
     private String addSpaces(String fileContents, String rexp, String punctuation) {
-        //Cleaning the string to avoid sentences of the form " time.This"
+        //Cleaning the string to avoid sentences of the form 'time.This'
         String[] fileClean = fileContents.split(rexp);
         fileContents = "";
         for(int index=0; index<fileClean.length; index++) {

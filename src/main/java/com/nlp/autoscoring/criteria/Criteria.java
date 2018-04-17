@@ -2,23 +2,17 @@ package com.nlp.autoscoring.criteria;
 
 import com.nlp.autoscoring.agreement.SentenceAgreement;
 import com.nlp.autoscoring.length.LengthOfEssay;
-import com.nlp.autoscoring.length.Preprocessing;
+import com.nlp.autoscoring.preprocessing.Preprocessing;
 import com.nlp.autoscoring.spelling.SpellingChecker;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 public class Criteria {
 
-    private PrintWriter trainingSet;
-    float averageLow, averageHigh;
-    float maxSpellingMistake = 25, minSpellingMistake = 0, mistakeTotal;
-    float averageSpellingMistake;
-    int maxagreement=28, minagreement=1, agreementTotal;
-    float averageAgreement;
-    int maxmissingbverb=3, minmissingbverb=0, missingbverbTotal;
-    float averagemissingbverb;
 
 
 //    public Criteria(){
@@ -97,23 +91,6 @@ public class Criteria {
        // averageHigh = Math.round(evaluatingTrainingSet(fileGrades, "high"));
        // trainingSet.close();
 
-        float length;
-        float scoreLength, scoreMistakes,scoreAgreement,scoreMissingVerb;
-        int spellingmistake;
-        int agreement, missingVerb;
-        float finalScore=0;
-        int wordCount,sentenceCount;
-
-       // System.out.println("Average - low: "+averageLow+" | high - "+averageHigh);
-        /*PrintWriter writer = null;
-        try {
-            writer = new PrintWriter("essaygrades.csv", "UTF-8");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }*/
-
         HashMap<String, Float> lengthMarks = new HashMap<>();
         HashMap<String, Float> spellingMarks = new HashMap<>();
         HashMap<String, Float> agreementMarks = new HashMap<>();
@@ -133,14 +110,7 @@ public class Criteria {
             String[] temp = verbCounts.split(" ");
             agreementMarks.put(file.getName(), (float) Integer.parseInt(temp[0])); // 3.1
             verbMissing.put(file.getName(), (float) Integer.parseInt(temp[1])); //3.2
-            //sentenceCount = Integer.parseInt(temp[2]);
-            //scoreMistakes = findScore(spellingmistake,wordCount,"b");
-           // scoreAgreement = findScore(agreement,sentenceCount, "c1");
-            //scoreMissingVerb = findScore(missingVerb,sentenceCount,"c2");
-            //String finalGrade = "L|H";
-           // writer.println(file.getName()+";"+scoreLength+";"+scoreMistakes+";"+scoreAgreement+";"+scoreMissingVerb+";0;0;"+finalScore+";"+finalGrade);
         }
-        // writer.close();
 
         String[] marksLength = minMaxFinder(lengthMarks).split(" ");
         String[] marksSpelling = minMaxFinder(spellingMarks).split(" ");
@@ -148,10 +118,10 @@ public class Criteria {
         String[] marksVerb = minMaxFinder(verbMissing).split(" ");
 
         for(File file:files){
-            lengthMarks.put(file.getName(), 5 * ((lengthMarks.get(file.getName()) - Float.parseFloat(marksLength[0]))/(Float.parseFloat(marksLength[1]) - Float.parseFloat(marksLength[0]))));
+            lengthMarks.put(file.getName(), (4 * ((lengthMarks.get(file.getName()) - Float.parseFloat(marksLength[0]))/(Float.parseFloat(marksLength[1]) - Float.parseFloat(marksLength[0]))))+1);
             spellingMarks.put(file.getName(), 4 * ((spellingMarks.get(file.getName()) - Float.parseFloat(marksSpelling[0]))/(Float.parseFloat(marksSpelling[1]) - Float.parseFloat(marksSpelling[0]))));
-            agreementMarks.put(file.getName(), 5 -(5 * ((agreementMarks.get(file.getName()) - Float.parseFloat(marksAgree[0]))/(Float.parseFloat(marksAgree[1]) - Float.parseFloat(marksAgree[0])))));
-            verbMissing.put(file.getName(), 5 -(5 * ((verbMissing.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksVerb[1]) - Float.parseFloat(marksVerb[0])))));
+            agreementMarks.put(file.getName(), 5 -(4 * ((agreementMarks.get(file.getName()) - Float.parseFloat(marksAgree[0]))/(Float.parseFloat(marksAgree[1]) - Float.parseFloat(marksAgree[0])))));
+            verbMissing.put(file.getName(), 5 -(4 * ((verbMissing.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksVerb[1]) - Float.parseFloat(marksVerb[0])))));
             finalScores.put(file.getName(),finalScoreCalculation(lengthMarks.get(file.getName()), spellingMarks.get(file.getName()), agreementMarks.get(file.getName()), verbMissing.get(file.getName())));
         }
 
@@ -164,6 +134,34 @@ public class Criteria {
             } else {
                 grade.put(file.getName(), "HIGH");
             }
+        }
+
+       /* Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File("./src/main/resources/essays_dataset/index.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        HashMap<String, String> fileGrades = new HashMap<>();
+
+        while (scanner.hasNext()) {
+            String newLine = scanner.nextLine();
+            String[] fileDetails = newLine.split(";");
+            fileGrades.put(fileDetails[0],fileDetails[2]);
+        }
+        scanner.close();*/
+
+        try {
+            PrintWriter writer = new PrintWriter("./essayscores.csv","UTF-8");
+            for (File file: files){
+                writer.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName())+";");
+            }
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
         System.out.println(grade);
     }
@@ -204,17 +202,6 @@ public class Criteria {
 //        return score;
 //    }
 
-    public float findScore(int value, int min, int max, String criteria){
-        float score = (value - min)/ (float) (max-min);
-       /* if(criteria.equals("b")){
-
-        }
-        else{
-            temp = (temp * 4)+1;
-        }*/
-
-        return score;
-    }
 
 
 }
