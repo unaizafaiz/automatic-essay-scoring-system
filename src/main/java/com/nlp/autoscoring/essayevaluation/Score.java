@@ -1,6 +1,7 @@
 package com.nlp.autoscoring.essayevaluation;
 
 import com.nlp.autoscoring.agreement.SentenceAgreement;
+import com.nlp.autoscoring.coefAnalysis.CoefAnalysis;
 import com.nlp.autoscoring.length.LengthOfEssay;
 import com.nlp.autoscoring.preprocessing.Preprocessing;
 import com.nlp.autoscoring.spelling.SpellingChecker;
@@ -51,59 +52,76 @@ public class Score {
             spellingMarks.put(file.getName(), 4 * ((spellingMarks.get(file.getName()) - Float.parseFloat(marksSpelling[0]))/(Float.parseFloat(marksSpelling[1]) - Float.parseFloat(marksSpelling[0]))));
             agreementMarks.put(file.getName(), 5 -(4 * ((agreementMarks.get(file.getName()) - Float.parseFloat(marksAgree[0]))/(Float.parseFloat(marksAgree[1]) - Float.parseFloat(marksAgree[0])))));
             verbMissing.put(file.getName(), 5 -(4 * ((verbMissing.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksVerb[1]) - Float.parseFloat(marksVerb[0])))));
-            finalScores.put(file.getName(),finalScoreCalculation(lengthMarks.get(file.getName()), spellingMarks.get(file.getName()), agreementMarks.get(file.getName()), verbMissing.get(file.getName())));
+            finalScores.put(file.getName(), (float) finalScoreCalculation(lengthMarks.get(file.getName()), spellingMarks.get(file.getName()), agreementMarks.get(file.getName()), verbMissing.get(file.getName())));
         }
 
-        String[] minMaxScore = minMaxFinder(finalScores).split(" ");
+         String[] minMaxScore = minMaxFinder(finalScores).split(" ");
+
+         grade = finalGradCalculation(finalScoresNormalised, finalScores, minMaxScore, grade);
+
+//        System.out.println(grade);
+//        CoefAnalysis coefAnalysis = new CoefAnalysis();
+//        String newCoef = coefAnalysis.analyisCoef(lengthMarks, spellingMarks, agreementMarks, verbMissing, finalScoresNormalised);
+//        System.out.println(newCoef);
 
 
-        for(File file:files){
-            finalScoresNormalised.put(file.getName(), 5 * ((finalScores.get(file.getName()) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
-           // finalScores.put(file.getName(), 5 * ((finalScores.get(file.getName()) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
-            if(finalScoresNormalised.get(file.getName()) < 2.5){
-                grade.put(file.getName(), "LOW");
-            } else {
-                grade.put(file.getName(), "HIGH");
-            }
-        }
 
-        Scanner scanner = null;
+
+        /*Scanner scanner = null;
         try {
-            scanner = new Scanner(new File("/Users/unaizafaiz/Downloads/essays_dataset/index.csv"));
+            scanner = new Scanner(new File("/home/sai/Desktop/git/EssayScoring/Automatic-Scoring-System/essays_dataset/index.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
         HashMap<String, String> fileGrades = new HashMap<>();
 
+        assert scanner != null;
         while (scanner.hasNext()) {
             String newLine = scanner.nextLine();
             String[] fileDetails = newLine.split(";");
             fileGrades.put(fileDetails[0],fileDetails[2]);
         }
-        scanner.close();
+        scanner.close();*/
 
         try {
-            PrintWriter writer = new PrintWriter("./essayscores.csv","UTF-8");
+            PrintWriter writer = new PrintWriter("./output/result.txt","UTF-8");
            // PrintWriter scoreFile = new PrintWriter("./scores3.csv","UTF-8");
             for (File file: files){
-                writer.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+finalScoresNormalised.get(file.getName())+"; "+grade.get(file.getName())+";"+fileGrades.get(file.getName()));
+                writer.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));//+";"+fileGrades.get(file.getName()));
                 //scoreFile.println(lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));
 
             }
             writer.close();
             //scoreFile.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
     }
 
-    private Float finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3) {
-        //return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3);
-         return (float) (0.16628 * aFloat - 0.16468 * aFloat1 - 0.31210 * (aFloat2) + 0.02660 * aFloat3);
+    private double finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3) {
+        return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3);
+        // return (float) (0.16628 * aFloat - 0.16468 * aFloat1 - 0.31210 * (aFloat2) + 0.02660 * aFloat3);
         // return (float) (0.21941 * aFloat - -0.16694 * aFloat1 -0.24901 * (aFloat2) + 0.03138  * aFloat3);
+        // return (1.0639055 * aFloat) - (1.9360945 * aFloat1) + (0.0639049 * aFloat2) + (0.0639049 * aFloat3);
+    }
+
+    private HashMap<String, String> finalGradCalculation(HashMap<String, Float> finalScoresNormalised, HashMap<String, Float> finalScores, String[] minMaxScore, HashMap<String, String> grade){
+        float mean = 0;
+        for(String file: finalScores.keySet()){
+            finalScoresNormalised.put(file, 5 * ((finalScores.get(file) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
+            // finalScores.put(file.getName(), 5 * ((finalScores.get(file.getName()) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
+            mean += finalScoresNormalised.get(file);
+        }
+        mean /= finalScores.size();
+        for(String file : finalScores.keySet()){
+            if(finalScoresNormalised.get(file) < mean){
+                grade.put(file, "LOW");
+            } else {
+                grade.put(file, "HIGH");
+            }
+        }
+        return grade;
     }
 
 
@@ -120,23 +138,23 @@ public class Score {
         return min+" "+max;
     }
 
-//    private float scoreLength(float length, float averageHigh, float averageLow) {
-//        float score=1;
-//
-//        if(length<10)
-//            score = 1;
-//        else {
-//            if (length>=averageHigh)
-//                score = 5;
-//            else if(length<averageHigh && length >= (averageHigh+averageLow)/2)
-//                score = 4;
-//            else if(length>=averageLow && length<(averageHigh+averageLow)/2)
-//                score = 3;
-//            else if(length<averageLow)
-//                score = 2;
-//        }
-//        return score;
-//    }
+   /* private float scoreLength(float length, float averageHigh, float averageLow) {
+        float score=1;
+
+        if(length<10)
+            score = 1;
+        else {
+            if (length>=averageHigh)
+                score = 5;
+            else if(length<averageHigh && length >= (averageHigh+averageLow)/2)
+                score = 4;
+            else if(length>=averageLow && length<(averageHigh+averageLow)/2)
+                score = 3;
+            else if(length<averageLow)
+                score = 2;
+        }
+        return score;
+    }*/
 
 
 

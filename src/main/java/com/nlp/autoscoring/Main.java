@@ -14,7 +14,7 @@ public class Main extends JPanel {
     public static void compareFinalGrade(){
         Scanner scanner = null;
         try {
-            scanner = new Scanner(new File("./essayscores.csv"));
+            scanner = new Scanner(new File("./output/result.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -47,7 +47,7 @@ public class Main extends JPanel {
 
         Score score = new Score();
         score.findCriteriaAndScore(files);
-        compareFinalGrade();
+        //compareFinalGrade();
 
     }
 
