@@ -1,40 +1,55 @@
 package com.nlp.autoscoring;
 
-import com.nlp.autoscoring.agreement.SentenceAgreement;
-import com.nlp.autoscoring.criteria.Criteria;
-import com.nlp.autoscoring.spelling.SpellingChecker;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.stanford.nlp.util.logging.RedwoodConfiguration;
+import com.nlp.autoscoring.essayevaluation.Score;
 
 
 import javax.swing.*;
 import java.io.File;
-import java.io.IOException;
-
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 
 public class Main extends JPanel {
 
+    public static void compareFinalGrade(){
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File("./essayscores.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // HashMap<String, String> fileGrades = new HashMap<>();
+        int countLow=0;
+        int countHigh=0;
+
+        while (scanner.hasNext()) {
+            String newLine = scanner.nextLine();
+            String[] fileDetails = newLine.split(";");
+            if(!fileDetails[9].equals(" "+fileDetails[10].toUpperCase()))
+                if(fileDetails[10].equals("low")) {
+                    countLow++;
+                    System.out.println(fileDetails[0]+" is marked high but is low");
+                } else {
+                    countHigh++;
+                    System.out.println(fileDetails[0]+" is marked low but is high");
+                }
+        }
+        scanner.close();
+        System.out.println("Count low mismatch = "+countLow);
+        System.out.println("Count high mismatch = "+countHigh);
+
+    }
 
     public static void main(String[] args){
-
         FileChooser fs = new FileChooser();
         File[] files = fs.getInput();
 
-        Criteria criteria = new Criteria();
-        criteria.findCriteriaAndScore(files);
+        Score score = new Score();
+        score.findCriteriaAndScore(files);
+        compareFinalGrade();
 
-        //for each file find each criteria
-        /*for(File file : files) {
-           *//* String fileContent = null;
-            try {
-                fileContent = FileToStringConverter.toStringConverter(file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*//*
-              //1. length
-            //    spellingChecker.countSpellingMistakes(fileContent);
-            //SentenceAgreement.countAgreementFailures(fileContent);
-        }*/
     }
+
+
 }

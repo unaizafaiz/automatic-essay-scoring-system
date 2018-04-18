@@ -1,13 +1,5 @@
 package com.nlp.autoscoring;
 
-import com.nlp.autoscoring.criteria.Criteria;
-import com.nlp.autoscoring.spelling.SpellingChecker;
-
-import javax.swing.*;
-import java.io.File;
-import com.nlp.autoscoring.criteria.Criteria;
-import com.nlp.autoscoring.spelling.SpellingChecker;
-
 import javax.swing.*;
 import java.io.File;
 

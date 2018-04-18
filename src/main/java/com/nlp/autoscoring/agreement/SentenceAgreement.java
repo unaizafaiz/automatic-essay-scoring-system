@@ -30,9 +30,7 @@ public class SentenceAgreement {
                 count++;
             }
         }
-        /*System.out.println(count);
-        System.out.println(vCount);
-        System.out.println(sentences.size());*/
+
 
         return count+" "+vCount+" "+sentences.size();
     }

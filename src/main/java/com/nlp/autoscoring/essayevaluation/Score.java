@@ -1,4 +1,4 @@
-package com.nlp.autoscoring.criteria;
+package com.nlp.autoscoring.essayevaluation;
 
 import com.nlp.autoscoring.agreement.SentenceAgreement;
 import com.nlp.autoscoring.length.LengthOfEssay;
@@ -11,57 +11,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
-public class Criteria {
-
-
-
-//    public Criteria(){
-//        try {
-//            trainingSet = new PrintWriter("trainingSet.csv", "UTF-8");
-//        } catch (FileNotFoundException | UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-//    public float evaluatingTrainingSet(HashMap<String, String> fileGrades, String classType){
-//
-//        Preprocessing preprocessing = new Preprocessing();
-//        LengthOfEssay lengthOfEssay = new LengthOfEssay();
-//        SpellingChecker spellingChecker = new SpellingChecker();
-//        SentenceAgreement sentenceAgreement = new SentenceAgreement();
-//        float average,  total = 0;
-//        float sum = 0;
-//        float length;
-//        String tempVerb;
-//        int tSpellingMistake, tAgreementCount, tMissingVerb;
-//
-//
-//        for (Map.Entry<String, String> fileGrade: fileGrades.entrySet()) {
-//            if(fileGrade.getValue().equals(classType)){
-//                String fileContents = preprocessing.cleanFile(new File("./src/main/resources/essays_dataset/essays/"+fileGrade.getKey()));
-//                length = lengthOfEssay.findLengthOfEssay(fileContents);
-//                sum += length;
-//                total++;
-//                String[] mistake = spellingChecker.countSpellingMistakes(fileContents).split(" ");
-//                tSpellingMistake= Integer.parseInt(mistake[0]);
-//                int wordCount = Integer.parseInt(mistake[1]);
-//                String[] temp = sentenceAgreement.countAgreementFailures(fileContents).split(" ");
-//                tAgreementCount = Integer.parseInt(temp[0]);
-//                tMissingVerb = Integer.parseInt(temp[1]);
-//                int sentenceCount = Integer.parseInt(temp[2]);
-//              /*  scoreMistakes = findScore(spellingmistake,wordCount,"b");
-//                scoreAgreement = findScore(agreement,sentenceCount, "c1");
-//                scoreMissingVerb = findScore(missingVerb,sentenceCount,"c2");*/
-//                trainingSet.println(fileGrade.getKey()+";"+length+";"+tSpellingMistake+";"+tAgreementCount+";"+tMissingVerb);
-//            }
-//        }
-//        if(total!=0)
-//            average = sum/total;
-//        else
-//            average = 0;
-//
-//        return average;
-//    }
+public class Score {
 
 
     public void findCriteriaAndScore(File[] files){
@@ -69,33 +19,12 @@ public class Criteria {
         SpellingChecker spellingChecker = new SpellingChecker();
         SentenceAgreement sentenceAgreement = new SentenceAgreement();
 
-        /*Scanner scanner = null;
-        HashMap<String, String> fileGrades = new HashMap<>();
-
-        //reading essay file name and grade from the csv file and saving in a hash map
-        try {
-            scanner = new Scanner(new File("./src/main/resources/essays_dataset/index.csv"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        while (scanner.hasNext()) {
-            String newLine = scanner.nextLine();
-            String[] fileDetails = newLine.split(";");
-            fileGrades.put(fileDetails[0],fileDetails[2]);
-        }
-        scanner.close();*/
-
-        //getting average scores for all low and high essays in the training corpus
-      //  averageLow = Math.round(evaluatingTrainingSet(fileGrades, "low"));
-       // averageHigh = Math.round(evaluatingTrainingSet(fileGrades, "high"));
-       // trainingSet.close();
-
         HashMap<String, Float> lengthMarks = new HashMap<>();
         HashMap<String, Float> spellingMarks = new HashMap<>();
         HashMap<String, Float> agreementMarks = new HashMap<>();
         HashMap<String, Float> verbMissing = new HashMap<>();
         HashMap<String, Float> finalScores = new HashMap<>();
+        HashMap<String, Float> finalScoresNormalised = new HashMap<>();
         HashMap<String, String> grade = new HashMap<>();
 
         for(File file: files) {
@@ -127,18 +56,20 @@ public class Criteria {
 
         String[] minMaxScore = minMaxFinder(finalScores).split(" ");
 
+
         for(File file:files){
-            finalScores.put(file.getName(), 5 * ((finalScores.get(file.getName()) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
-            if(finalScores.get(file.getName()) < 3){
+            finalScoresNormalised.put(file.getName(), 5 * ((finalScores.get(file.getName()) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
+           // finalScores.put(file.getName(), 5 * ((finalScores.get(file.getName()) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
+            if(finalScoresNormalised.get(file.getName()) < 2.5){
                 grade.put(file.getName(), "LOW");
             } else {
                 grade.put(file.getName(), "HIGH");
             }
         }
 
-       /* Scanner scanner = null;
+        Scanner scanner = null;
         try {
-            scanner = new Scanner(new File("./src/main/resources/essays_dataset/index.csv"));
+            scanner = new Scanner(new File("/Users/unaizafaiz/Downloads/essays_dataset/index.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -150,24 +81,29 @@ public class Criteria {
             String[] fileDetails = newLine.split(";");
             fileGrades.put(fileDetails[0],fileDetails[2]);
         }
-        scanner.close();*/
+        scanner.close();
 
         try {
             PrintWriter writer = new PrintWriter("./essayscores.csv","UTF-8");
+           // PrintWriter scoreFile = new PrintWriter("./scores3.csv","UTF-8");
             for (File file: files){
-                writer.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName())+";");
+                writer.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+finalScoresNormalised.get(file.getName())+"; "+grade.get(file.getName())+";"+fileGrades.get(file.getName()));
+                //scoreFile.println(lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));
+
             }
             writer.close();
+            //scoreFile.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        System.out.println(grade);
     }
 
     private Float finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3) {
-        return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3);
+        //return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3);
+         return (float) (0.16628 * aFloat - 0.16468 * aFloat1 - 0.31210 * (aFloat2) + 0.02660 * aFloat3);
+        // return (float) (0.21941 * aFloat - -0.16694 * aFloat1 -0.24901 * (aFloat2) + 0.03138  * aFloat3);
     }
 
 
