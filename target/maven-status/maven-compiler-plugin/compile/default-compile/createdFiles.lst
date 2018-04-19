@@ -1,0 +1,8 @@
+com/nlp/autoscoring/parser/StanfordParser.class
+com/nlp/autoscoring/FileChooser.class
+com/nlp/autoscoring/length/LengthOfEssay.class
+com/nlp/autoscoring/Main.class
+com/nlp/autoscoring/spelling/SpellingChecker.class
+com/nlp/autoscoring/preprocessing/Preprocessing.class
+com/nlp/autoscoring/essayevaluation/Score.class
+com/nlp/autoscoring/agreement/SentenceAgreement.class

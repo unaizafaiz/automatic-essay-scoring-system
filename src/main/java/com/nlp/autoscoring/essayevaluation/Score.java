@@ -50,8 +50,8 @@ public class Score {
         for(File file:files){
             lengthMarks.put(file.getName(), (4 * ((lengthMarks.get(file.getName()) - Float.parseFloat(marksLength[0]))/(Float.parseFloat(marksLength[1]) - Float.parseFloat(marksLength[0]))))+1);
             spellingMarks.put(file.getName(), 4 * ((spellingMarks.get(file.getName()) - Float.parseFloat(marksSpelling[0]))/(Float.parseFloat(marksSpelling[1]) - Float.parseFloat(marksSpelling[0]))));
-            agreementMarks.put(file.getName(), 5 -(4 * ((agreementMarks.get(file.getName()) - Float.parseFloat(marksAgree[0]))/(Float.parseFloat(marksAgree[1]) - Float.parseFloat(marksAgree[0])))));
-            verbMissing.put(file.getName(), 5 -(4 * ((verbMissing.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksVerb[1]) - Float.parseFloat(marksVerb[0])))));
+            agreementMarks.put(file.getName(), (4 * ((agreementMarks.get(file.getName()) - Float.parseFloat(marksAgree[0]))/(Float.parseFloat(marksAgree[1]) - Float.parseFloat(marksAgree[0]))))+1);
+            verbMissing.put(file.getName(), 5 - (4 * ((verbMissing.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksVerb[1]) - Float.parseFloat(marksVerb[0])))));
             finalScores.put(file.getName(), (float) finalScoreCalculation(lengthMarks.get(file.getName()), spellingMarks.get(file.getName()), agreementMarks.get(file.getName()), verbMissing.get(file.getName())));
         }
 
@@ -67,9 +67,9 @@ public class Score {
 
 
 
-        /*Scanner scanner = null;
+        Scanner scanner = null;
         try {
-            scanner = new Scanner(new File("/home/sai/Desktop/git/EssayScoring/Automatic-Scoring-System/essays_dataset/index.csv"));
+            scanner = new Scanner(new File("/Users/unaizafaiz/Downloads/essays_dataset/index.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -82,17 +82,19 @@ public class Score {
             String[] fileDetails = newLine.split(";");
             fileGrades.put(fileDetails[0],fileDetails[2]);
         }
-        scanner.close();*/
+        scanner.close();
 
         try {
             PrintWriter writer = new PrintWriter("./output/result.txt","UTF-8");
-           // PrintWriter scoreFile = new PrintWriter("./scores3.csv","UTF-8");
+            PrintWriter scoreEssay = new PrintWriter("./essayscores.csv","UTF-8");
             for (File file: files){
                 writer.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));//+";"+fileGrades.get(file.getName()));
+                scoreEssay.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+finalScoresNormalised.get(file.getName())+"; "+grade.get(file.getName())+";"+fileGrades.get(file.getName()));
                 //scoreFile.println(lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));
 
             }
             writer.close();
+            scoreEssay.close();
             //scoreFile.close();
         } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -101,9 +103,9 @@ public class Score {
 
     private double finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3) {
         return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3);
-        // return (float) (0.16628 * aFloat - 0.16468 * aFloat1 - 0.31210 * (aFloat2) + 0.02660 * aFloat3);
-        // return (float) (0.21941 * aFloat - -0.16694 * aFloat1 -0.24901 * (aFloat2) + 0.03138  * aFloat3);
         // return (1.0639055 * aFloat) - (1.9360945 * aFloat1) + (0.0639049 * aFloat2) + (0.0639049 * aFloat3);
+       // return (float) ( 0.27309  * aFloat -0.14183 * aFloat1 + 0.21198 * (aFloat2) + 0.02764  * aFloat3);
+       // return (float) ( 0.22131  * aFloat -0.15951 * aFloat1 + 0.27341 * (aFloat2) + 0.01245  * aFloat3);
     }
 
     private HashMap<String, String> finalGradCalculation(HashMap<String, Float> finalScoresNormalised, HashMap<String, Float> finalScores, String[] minMaxScore, HashMap<String, String> grade){
