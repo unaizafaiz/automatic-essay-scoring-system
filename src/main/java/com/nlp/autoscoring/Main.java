@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class Main extends JPanel {
 
-    public static void compareFinalGrade(){
+    /*private static void compareFinalGrade(){
         Scanner scanner = null;
         try {
-            scanner = new Scanner(new File("./output/result.txt"));
+            scanner = new Scanner(new File("./essayscores.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -23,6 +23,7 @@ public class Main extends JPanel {
         int countLow=0;
         int countHigh=0;
 
+        assert scanner != null;
         while (scanner.hasNext()) {
             String newLine = scanner.nextLine();
             String[] fileDetails = newLine.split(";");
@@ -39,14 +40,16 @@ public class Main extends JPanel {
         System.out.println("Count low mismatch = "+countLow);
         System.out.println("Count high mismatch = "+countHigh);
 
-    }
+    }*/
 
     public static void main(String[] args){
-        FileChooser fs = new FileChooser();
-        File[] files = fs.getInput();
+//        FileChooser fs = new FileChooser();
+        File folder = new File("./input/testing/essays");
+        File[] filesInFolder = folder.listFiles();
+//        File[] files = fs.getInput();
 
         Score score = new Score();
-        score.findCriteriaAndScore(files);
+        score.findCriteriaAndScore(filesInFolder);
         //compareFinalGrade();
 
     }

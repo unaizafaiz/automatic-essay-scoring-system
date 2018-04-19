@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 public class CoefAnalysis {
     public String analyisCoef(HashMap<String, Float> lengthMarks, HashMap<String, Float> spellingMarks, HashMap<String, Float> agreementMarks, HashMap<String, Float> verbMissing, HashMap<String, Float> finalScoresNormalised){
-        float lengthCoef = 2;
-        float spellingCoef = -1;
-        float agreementCoef = 1;
-        float verbCoef = 1;
+        double lengthCoef = 1.0639055;
+        double spellingCoef = -1.9360945;
+        double agreementCoef = 0.0639049;
+        double verbCoef = 0.0639049;
         for(String file: lengthMarks.keySet()){
             float iniResult = computeResult(lengthCoef,lengthMarks.get(file),spellingCoef,spellingMarks.get(file),agreementCoef,agreementMarks.get(file),verbCoef,verbMissing.get(file));
             if(iniResult > 5){
@@ -29,8 +29,8 @@ public class CoefAnalysis {
         return lengthCoef+" "+spellingCoef+" "+agreementCoef+" "+verbCoef;
     }
 
-    private float computeResult(float lengthCoef, Float aFloat, float spellingCoef, Float aFloat1, float agreementCoef, Float aFloat2, float verbCoef, Float aFloat3) {
-        return lengthCoef*aFloat + spellingCoef*aFloat1 + agreementCoef * aFloat2 + verbCoef * aFloat3;
+    private float computeResult(double lengthCoef, Float aFloat, double spellingCoef, Float aFloat1, double agreementCoef, Float aFloat2, double verbCoef, Float aFloat3) {
+        return (float) (lengthCoef*aFloat + spellingCoef*aFloat1 + agreementCoef * aFloat2 + verbCoef * aFloat3);
     }
 
 }

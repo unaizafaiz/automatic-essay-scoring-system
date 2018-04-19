@@ -59,17 +59,17 @@ public class Score {
 
          grade = finalGradCalculation(finalScoresNormalised, finalScores, minMaxScore, grade);
 
-//        System.out.println(grade);
-//        CoefAnalysis coefAnalysis = new CoefAnalysis();
-//        String newCoef = coefAnalysis.analyisCoef(lengthMarks, spellingMarks, agreementMarks, verbMissing, finalScoresNormalised);
-//        System.out.println(newCoef);
+        System.out.println(grade);
+        CoefAnalysis coefAnalysis = new CoefAnalysis();
+        String newCoef = coefAnalysis.analyisCoef(lengthMarks, spellingMarks, agreementMarks, verbMissing, finalScoresNormalised);
+        System.out.println(newCoef);
 
 
 
 
-        /*Scanner scanner = null;
+       /* Scanner scanner = null;
         try {
-            scanner = new Scanner(new File("/home/sai/Desktop/git/EssayScoring/Automatic-Scoring-System/essays_dataset/index.csv"));
+            scanner = new Scanner(new File("./input/testing/index.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
