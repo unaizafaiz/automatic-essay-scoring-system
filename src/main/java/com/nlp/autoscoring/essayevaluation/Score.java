@@ -59,7 +59,7 @@ public class Score {
 
          grade = finalGradCalculation(finalScoresNormalised, finalScores, minMaxScore, grade);
 
-       /* System.out.println(grade);
+      /* System.out.println(grade);
         CoefAnalysis coefAnalysis = new CoefAnalysis();
         String newCoef = coefAnalysis.analyisCoef(lengthMarks, spellingMarks, agreementMarks, verbMissing, finalScoresNormalised);
         System.out.println(newCoef);*/
@@ -71,7 +71,7 @@ public class Score {
             PrintWriter writer = new PrintWriter("./output/result.txt","UTF-8");
            // PrintWriter scoreEssay = new PrintWriter("./essayscores.csv","UTF-8");
             for (File file: files){
-                writer.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));//+";"+fileGrades.get(file.getName()));
+                writer.println(file.getName()+";"+lengthMarks.get(file.getName())+";"+spellingMarks.get(file.getName())+";"+agreementMarks.get(file.getName())+";"+verbMissing.get(file.getName())+";0;0;0;"+finalScores.get(file.getName())+";unknown");//+grade.get(file.getName()));
                // scoreEssay.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+finalScoresNormalised.get(file.getName())+"; "+grade.get(file.getName())+";"+fileGrades.get(file.getName()));
                 //scoreFile.println(lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));
             }
@@ -107,7 +107,7 @@ public class Score {
          return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3);
         // return (1.0639055 * aFloat) - (1.9360945 * aFloat1) + (0.0639049 * aFloat2) + (0.0639049 * aFloat3);
         // return (float) ( 0.27309  * aFloat -0.14183 * aFloat1 + 0.21198 * (aFloat2) + 0.02764  * aFloat3);
-        //return (float) ( 0.22131  * aFloat -0.15951 * aFloat1 + 0.27341 * (aFloat2) + 0.01245  * aFloat3);
+        // return (float) ( 0.22131  * aFloat -0.15951 * aFloat1 + 0.27341 * (aFloat2) + 0.01245  * aFloat3);
     }
 
     private HashMap<String, String> finalGradCalculation(HashMap<String, Float> finalScoresNormalised, HashMap<String, Float> finalScores, String[] minMaxScore, HashMap<String, String> grade){

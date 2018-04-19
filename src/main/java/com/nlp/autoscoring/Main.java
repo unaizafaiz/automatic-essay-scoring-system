@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
-public class Main{ // extends JPanel{
+public class Main{ //extends JPanel{
 
    /* private static void compareFinalGrade(){
         Scanner scanner = null;
@@ -39,7 +39,7 @@ public class Main{ // extends JPanel{
         System.out.println("Count low mismatch = "+countLow);
         System.out.println("Count high mismatch = "+countHigh);
 
-    } */
+    }*/
 
     public static void main(String[] args){
         //FileChooser fs = new FileChooser();
