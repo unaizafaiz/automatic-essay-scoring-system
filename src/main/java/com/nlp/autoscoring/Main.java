@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Main{ //extends JPanel{
 
-   /* private static void compareFinalGrade(){
+    private static void compareFinalGrade(){
         Scanner scanner = null;
         try {
             scanner = new Scanner(new File("./essayscores.csv"));
@@ -26,8 +26,8 @@ public class Main{ //extends JPanel{
         while (scanner.hasNext()) {
             String newLine = scanner.nextLine();
             String[] fileDetails = newLine.split(";");
-            if(!fileDetails[9].equals(" "+fileDetails[10].toUpperCase()))
-                if(fileDetails[10].equals("low")) {
+            if(!fileDetails[10].equals(" "+fileDetails[11].toUpperCase()))
+                if(fileDetails[11].equals("low")) {
                     countLow++;
                     System.out.println(fileDetails[0]+" is marked high but is low");
                 } else {
@@ -39,7 +39,7 @@ public class Main{ //extends JPanel{
         System.out.println("Count low mismatch = "+countLow);
         System.out.println("Count high mismatch = "+countHigh);
 
-    }*/
+    }
 
     public static void main(String[] args){
         //FileChooser fs = new FileChooser();
@@ -49,7 +49,7 @@ public class Main{ //extends JPanel{
 
         Score score = new Score();
         score.findCriteriaAndScore(filesInFolder);
-      //  compareFinalGrade();
+        compareFinalGrade();
 
     }
 
