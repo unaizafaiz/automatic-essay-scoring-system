@@ -1,5 +1,7 @@
 package com.nlp.autoscoring.parser;
 
+import edu.stanford.nlp.dcoref.CorefChain;
+import edu.stanford.nlp.dcoref.CorefCoreAnnotations;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
@@ -9,6 +11,7 @@ import edu.stanford.nlp.trees.TreeCoreAnnotations;
 import edu.stanford.nlp.util.CoreMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import edu.stanford.nlp.util.logging.RedwoodConfiguration;
 
@@ -105,6 +108,23 @@ public class StanfordParser {
             result.add(tree);
         }
 
+        coreferenceResolution(text);
+
         return result;
     }
+
+    public static Map<Integer,CorefChain> coreferenceResolution(String text) {
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, mention,coref");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // create an empty Annotation just with the given text
+        Annotation document = new Annotation(text);
+
+        // run all Annotators on this text
+        pipeline.annotate(document);
+
+        return document.get(CorefCoreAnnotations.CorefChainAnnotation.class);
+    }
+
 }
