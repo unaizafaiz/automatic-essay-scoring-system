@@ -36,6 +36,10 @@
                 </executions>
                 <configuration>
                     <mainClass>com.nlp.autoscoring.Main</mainClass>
+                    <arguments>
+                        <argument>-Xmx1024m</argument>
+                        <argument>-Xms256m</argument>
+                    </arguments>
                 </configuration>
             </plugin>
         </plugins>
@@ -46,7 +50,7 @@
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>3.8.0</version>
+            <version>3.7.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
         <dependency>
@@ -79,12 +83,7 @@
         <dependency>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>3.6.0</version>
-        </dependency>
-        <dependency>
-            <groupId>edu.stanford.nlp</groupId>
-            <artifactId>stanford-corenlp</artifactId>
-            <version>3.6.0</version>
+            <version>3.9.1</version>
             <classifier>models</classifier> <!--  will get the dependent model jars -->
         </dependency>
         <dependency>

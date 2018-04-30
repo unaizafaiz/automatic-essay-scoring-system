@@ -1,12 +1,10 @@
 package com.nlp.autoscoring;
 
+import com.nlp.autoscoring.coherency.Coherency;
 import com.nlp.autoscoring.essayevaluation.Score;
 import com.nlp.autoscoring.parser.StanfordParser;
 import com.nlp.autoscoring.preprocessing.Preprocessing;
-import edu.stanford.nlp.dcoref.CorefChain;
-
-
-import javax.swing.*;
+import edu.stanford.nlp.coref.data.CorefChain;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Map;
@@ -51,22 +49,19 @@ public class Main{ //extends JPanel{
         File folder = new File("./input/testing/essays");
         File[] filesInFolder = folder.listFiles();
 
-        //Score score = new Score();
-        //score.findCriteriaAndScore(filesInFolder);
-        Preprocessing preprocessing = new Preprocessing();
-        StanfordParser stp = new StanfordParser();
-        for(File file: filesInFolder){
-            String a = file.toString();
-            System.out.println(a);
-            System.out.println(file.getName()+"-----------------");
-            String text = preprocessing.cleanFile(file);
-            Map<Integer,CorefChain> graph = stp.coreferenceResolution(text);
-            for (CorefChain entry : graph.values()) {
-                System.out.println(entry);
-            }
+        Score score = new Score();
+        score.findCriteriaAndScore(filesInFolder);
+//        Preprocessing preprocessing = new Preprocessing();
+//        Coherency coherency = new Coherency();
+//        assert filesInFolder != null;
+//        for(File file : filesInFolder){
+//            System.out.println("=================="+file.getName()+"======================");
+//            String text = preprocessing.cleanFile(file);
+//            Map<Integer,CorefChain> graph = StanfordParser.coreferenceResolution(text);
+//            System.out.println(coherency.checkCoherency(text,graph));
+//        }
             System.out.println();
-        }
-       // compareFinalGrade();
+        compareFinalGrade();
 
     }
 
