@@ -43,10 +43,8 @@ public class Main{ //extends JPanel{
         //File[] files = fs.getInput();
         File folder = new File("./input/testing/essays");
         File[] filesInFolder = folder.listFiles();
-
-
-       Score score = new Score();
-       score.findCriteriaAndScore(filesInFolder);
+        Score score = new Score();
+        score.findCriteriaAndScore(filesInFolder);
         compareFinalGrade();
 
     }

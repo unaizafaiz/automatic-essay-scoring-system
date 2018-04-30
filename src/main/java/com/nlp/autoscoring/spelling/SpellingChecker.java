@@ -27,6 +27,7 @@ public class SpellingChecker {
         }
     }
 
+    // Counting the words which are misspelled checking if the words are present in the dictionary.txt or stop-words.txt
     public String countSpellingMistakes(String fileName){
         int mistakesCount = 0 ;
         List<String> tokenizedFileContents = StanfordParser.tokenize(fileName);

@@ -16,6 +16,7 @@ import java.util.*;
 
 public class TextCoherence {
     private ClassLoader classLoader = getClass().getClassLoader();
+    // Loading the pronouns.txt file for collecting all the pronouns from the essay
     private final File fileName = new File(Objects.requireNonNull(classLoader.getResource("pronouns.txt").getFile()));
     private static Charset charset = Charset.forName("UTF-8");
     private Set<String> pronoun;
@@ -29,10 +30,15 @@ public class TextCoherence {
     }
 
     public float checkCoherency(String text, Map<Integer, CorefChain> corefText) {
-        float count = 0, totalCount = 0;
+        // Count is number of pronouns that are not co-referenced
+        float count = 0;
+        // totalCount is the number of pronouns occurring in the essay
+        float totalCount = 0;
+        // Loading all the pronouns mapped to the sentence in which they appeared
         Map<Integer, List<String>> corefTect = extractCorefPronoun(corefText);
         Map<Integer, List<String>> pronounText = checkPronoun(text, pronoun);
 
+        // Calculating the value of count and totalCount
         for(int index : pronounText.keySet()){
             if(corefTect.get(index) == null) {
                 count += pronounText.get(index).size();
@@ -46,12 +52,10 @@ public class TextCoherence {
                 }
             }
         }
-//        System.out.println(pronounText);
-//        System.out.println(corefTect);
-//        System.out.println(count+"\t"+totalCount);
         return count / totalCount;
     }
 
+    // Collecting all the pronouns co-referenced
     private Map<Integer, List<String>> extractCorefPronoun(Map<Integer, CorefChain> corefText) {
         ListMultimap<Integer, String> result = ArrayListMultimap.create();
         for (int index : corefText.keySet()) {
@@ -71,6 +75,7 @@ public class TextCoherence {
         return Multimaps.asMap(result);
     }
 
+    // Collecting all the pronouns in the essay
     private Map<Integer, List<String>> checkPronoun(String text, Set<String> pronoun) {
         Map<Integer, List<String>> result = new HashMap<>();
         List<String> textList = StanfordParser.sentenceSplit(text);

@@ -66,7 +66,7 @@ public class Score {
         String[] marksCoherency = minMaxFinder(coherencyMarks).split(" ");
         String[] marksTopic = minMaxFinder(topicCoherence).split(" ");
 
-        //normaliseing the feature values
+        //normalizing the feature values
         for(File file:files){
             lengthMarks.put(file.getName(), (4 * ((lengthMarks.get(file.getName()) - Float.parseFloat(marksLength[0]))/(Float.parseFloat(marksLength[1]) - Float.parseFloat(marksLength[0]))))+1);
             spellingMarks.put(file.getName(), 4 * ((spellingMarks.get(file.getName()) - Float.parseFloat(marksSpelling[0]))/(Float.parseFloat(marksSpelling[1]) - Float.parseFloat(marksSpelling[0]))));
@@ -78,8 +78,10 @@ public class Score {
             finalScores.put(file.getName(), (float) finalScoreCalculation(lengthMarks.get(file.getName()), spellingMarks.get(file.getName()), agreementMarks.get(file.getName()), verbMissing.get(file.getName()), sentenceForming.get(file.getName()), coherencyMarks.get(file.getName()), topicCoherence.get(file.getName())));
         }
 
+
          String[] minMaxScore = minMaxFinder(finalScores).split(" ");
 
+        // Assigning HIGH or LOW for the essay
          grade = finalGradCalculation(finalScoresNormalised, finalScores, minMaxScore, grade);
 
       /* System.out.println(grade);
@@ -90,6 +92,7 @@ public class Score {
 
        HashMap<String, String> fileGrades = getExpectedGrades();
 
+       // Writing output in result.txt file
         try {
             PrintWriter writer = new PrintWriter("./output/result.txt","UTF-8");
             PrintWriter scoreEssay = new PrintWriter("./essayscores.csv","UTF-8");
@@ -138,22 +141,22 @@ public class Score {
         float mean = 0;
         for(String file: finalScores.keySet()){
             finalScoresNormalised.put(file, 5 * ((finalScores.get(file) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
-            /*if(finalScoresNormalised.get(file) < 2.5){
-                grade.put(file, "LOW");
-            } else {
-                grade.put(file, "HIGH");
-            }*/
-
-            mean += finalScoresNormalised.get(file);
-        }
-        mean /= finalScores.size();
-        for(String file : finalScores.keySet()){
-            if(finalScoresNormalised.get(file) < mean){
+            if(finalScoresNormalised.get(file) <= 3.25){
                 grade.put(file, "LOW");
             } else {
                 grade.put(file, "HIGH");
             }
+
+//            mean += finalScoresNormalised.get(file);
         }
+//        mean /= finalScores.size();
+//        for(String file : finalScores.keySet()){
+//            if(finalScoresNormalised.get(file) <= mean){
+//                grade.put(file, "LOW");
+//            } else {
+//                grade.put(file, "HIGH");
+//            }
+//        }
         return grade;
     }
 
