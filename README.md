@@ -1,4 +1,4 @@
-# Project 1 for CS421 – University of Illinois at Chicago
+# Project for CS421 – University of Illinois at Chicago
 * Name 1: vsakur2@uic.edu 
 * Name 2: ufaiz2@uic.edu
 ## Setup
