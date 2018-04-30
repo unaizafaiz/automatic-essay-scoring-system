@@ -13,11 +13,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class Score {
 
 
+    /**
+     * Finding scores for all the feature values for each essay and saving the grades into a result.txt file
+     * @param files
+     */
     public void findCriteriaAndScore(File[] files){
         LengthOfEssay lengthOfEssay = new LengthOfEssay();
         SpellingChecker spellingChecker = new SpellingChecker();
@@ -78,8 +83,10 @@ public class Score {
             finalScores.put(file.getName(), (float) finalScoreCalculation(lengthMarks.get(file.getName()), spellingMarks.get(file.getName()), agreementMarks.get(file.getName()), verbMissing.get(file.getName()), sentenceForming.get(file.getName()), coherencyMarks.get(file.getName()), topicCoherence.get(file.getName())));
         }
 
+
          String[] minMaxScore = minMaxFinder(finalScores).split(" ");
 
+        // Assigning HIGH or LOW for the essay
          grade = finalGradCalculation(finalScoresNormalised, finalScores, minMaxScore, grade);
 
       /* System.out.println(grade);
@@ -90,6 +97,7 @@ public class Score {
 
        HashMap<String, String> fileGrades = getExpectedGrades();
 
+       // Writing output in result.txt file
         try {
             PrintWriter writer = new PrintWriter("./output/result.txt","UTF-8");
             PrintWriter scoreEssay = new PrintWriter("./essayscores.csv","UTF-8");
@@ -107,6 +115,11 @@ public class Score {
         }
     }
 
+
+    /**
+     * Gets expected grade from index.csv file
+     * @return HashMap<String, String>
+     */
     private HashMap<String, String> getExpectedGrades() {
         Scanner scanner = null;
         try {
@@ -127,6 +140,18 @@ public class Score {
         return fileGrades;
     }
 
+    /**
+     * Calculates final score
+     *
+     * @param aFloat Length of the file
+     * @param aFloat1 Spelling mistake score
+     * @param aFloat2 Agreement
+     * @param aFloat3 Missing verb
+     * @param aFloat4 Sentence formation
+     * @param aFloat5 Text coherence
+     * @param aFloat6 Topic coherence
+     * @return final score
+     */
     private double finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3, Float aFloat4, Float aFloat5, Float aFloat6) {
          return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3) + (2 * aFloat4) + (2 * aFloat5) + (3 * aFloat6);
         // return (1.0639055 * aFloat) - (1.9360945 * aFloat1) + (0.0639049 * aFloat2) + (0.0639049 * aFloat3);
@@ -134,38 +159,46 @@ public class Score {
         // return ((  0.21431  * aFloat) - (0.04117 * aFloat1) + (0.19750 * aFloat2) - (0.03012  * aFloat3) + (0.04554 *aFloat4) - (0.08718 * aFloat5) + (0.20009 * aFloat6));
     }
 
+    /**
+     * Assign grade low or high by calculating the mean
+     */
     private HashMap<String, String> finalGradCalculation(HashMap<String, Float> finalScoresNormalised, HashMap<String, Float> finalScores, String[] minMaxScore, HashMap<String, String> grade){
         float mean = 0;
         for(String file: finalScores.keySet()){
             finalScoresNormalised.put(file, 5 * ((finalScores.get(file) - Float.parseFloat(minMaxScore[0]))/(Float.parseFloat(minMaxScore[1]) - Float.parseFloat(minMaxScore[0]))));
-            /*if(finalScoresNormalised.get(file) < 2.5){
-                grade.put(file, "LOW");
-            } else {
-                grade.put(file, "HIGH");
-            }*/
-
-            mean += finalScoresNormalised.get(file);
-        }
-        mean /= finalScores.size();
-        for(String file : finalScores.keySet()){
-            if(finalScoresNormalised.get(file) < mean){
+            if(finalScoresNormalised.get(file) <= 3.25){
                 grade.put(file, "LOW");
             } else {
                 grade.put(file, "HIGH");
             }
+
+//            mean += finalScoresNormalised.get(file);
         }
+//        mean /= finalScores.size();
+//        for(String file : finalScores.keySet()){
+//            if(finalScoresNormalised.get(file) <= mean){
+//                grade.put(file, "LOW");
+//            } else {
+//                grade.put(file, "HIGH");
+//            }
+//        }
         return grade;
     }
 
 
-    private String minMaxFinder(HashMap<String, Float> lengthMarks) {
+    /**
+     * Finding min or max value to normalise the scores
+     * @param score
+     * @return
+     */
+    private String minMaxFinder(HashMap<String, Float> score) {
         float min = 10000, max = 0;
-        for(String a:lengthMarks.keySet()){
-            if(min > lengthMarks.get(a)){
-                min = lengthMarks.get(a);
+        for(String a:score.keySet()){
+            if(min > score.get(a)){
+                min = score.get(a);
             }
-            if(max < lengthMarks.get(a)){
-                max = lengthMarks.get(a);
+            if(max < score.get(a)){
+                max = score.get(a);
             }
         }
         return min+" "+max;

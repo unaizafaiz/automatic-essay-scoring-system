@@ -21,9 +21,11 @@ public class SentenceAgreement {
         for(String sentence : sentences) {
             Set<String> posTag = Sets.newHashSet(StanfordParser.posTagging(sentence));
             boolean isVerb = Sets.intersection(verbTags, posTag).isEmpty();
+            //Counting verbs in the sentence
             if(isVerb){
                 vCount++;
             }
+            //Count of agreement between verb and noun
             boolean isSingular = !Sets.intersection(singularPOS, posTag).isEmpty() || sentence.contains("was");
             boolean isPlural = !Sets.intersection(pluralPOS, posTag).isEmpty() || sentence.contains("were");
             if (isPlural && isSingular){

@@ -112,10 +112,15 @@ public class TopicCoherence {
         return count/(float)nouns.size();
     }
 
-    private HashSet<String> getNounList(String topic) {
+    /**
+     * Getting list of nouns in the given string
+     * @param text
+     * @return list of nouns
+     */
+    private HashSet<String> getNounList(String text) {
         HashSet<String> nouns =  new HashSet<>();
-        List<String> tags = StanfordParser.posTagging(topic);
-        List<String> lemma  = StanfordParser.lemmatize(topic);
+        List<String> tags = StanfordParser.posTagging(text);
+        List<String> lemma  = StanfordParser.lemmatize(text);
         for(int index=0; index<lemma.size();index++){
             if(tags.get(index).contains("NN"))
                 nouns.add(lemma.get(index));

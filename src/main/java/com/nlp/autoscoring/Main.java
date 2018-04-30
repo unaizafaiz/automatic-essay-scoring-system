@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Main{ //extends JPanel{
 
+    //Test function to get no of files marked wrong
     private static void compareFinalGrade(){
         Scanner scanner = null;
         try {
@@ -42,11 +43,16 @@ public class Main{ //extends JPanel{
         //FileChooser fs = new FileChooser();
         //File[] files = fs.getInput();
         // File folder =  new File("/Users/unaizafaiz/Downloads/essays_dataset/essays/development");
+
+        //Reading files from the testing essay folder
         File folder = new File("./input/testing/essays");
         File[] filesInFolder = folder.listFiles();
 
+        //Calculating score for the essays
         Score score = new Score();
         score.findCriteriaAndScore(filesInFolder);
+
+        //Comparing the result
         compareFinalGrade();
 
     }

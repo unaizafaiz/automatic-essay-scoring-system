@@ -22,17 +22,21 @@ public class SentenceFormation {
         //System.out.println("Total sentences in this essay: "+sentences.size());
         for(String sentence : sentences) {
             List<Tree> trees = stp.parse(sentence.toString());
+
+            //list of determiners that can be used with a pronoun
             Set<String> determiner = Sets.newHashSet("all)", "both)", "half)", "either)", "neither)", "what)", "rather)", "quiet)");
+
+            //For each tree in each sentence in the essay find the invalid sentences
             for (Tree tree : trees) {
                 String strTree = tree.toString();
 
-                // System.out.println(strTree);
+                //If the sentence is a fragment
                 if (strTree.contains("(ROOT (FRAG")) {
                    // System.out.println(strTree);
                     count++;
-                } else if (tree.toString().contains("(ROOT (SINV ")) {
+                } else if (tree.toString().contains("(ROOT (SINV ")) { //Checking for inverse sentence if contains a subj but not an obj then increase count
                     Boolean check = false;
-                    if(!tree.toString().contains(" (SBAR "))
+                    if(!tree.toString().contains(" (SBAR ")) //if the sentence contains a clause then it might be incomplete
                             check=true;
                     if(check) {
                         // One time setup
@@ -51,13 +55,14 @@ public class SentenceFormation {
                             count++;
                         }
                     }
-                } else if (strTree.contains("(ROOT (SBAR ")) {
+                } else if (strTree.contains("(ROOT (SBAR ")) { //if it is only a subordinate clause
                    // System.out.println(tree);
                     count++;
                 } else {
                     String[] tag = strTree.split(" ");
 
                     for (int i = 0; i < tag.length; i++) { //
+                        //Pattern of the type "because running alone"
                         if (tag[i].toLowerCase().equals("because)") && tag[i + 1].equals("(S") && tag[i + 2].equals("(VP") && tag[i + 3].equals("(VBG")) {
                             count++;
                            // System.out.println(strTree);
@@ -76,10 +81,10 @@ public class SentenceFormation {
 
             }
         }
-        return count/(float) sentences.size();
+        return count/(float) sentences.size(); //returning the percentage depending on overall size of essay
     }
 
-    public static void main(String args[]){
+    /*public static void main(String args[]){
         //File[] files = fs.getInput();
        //File file = new File("./input/testing/essays/52951.txt");
         //File[] files = fs.getInput();
@@ -112,7 +117,7 @@ public class SentenceFormation {
            // System.out.println(sentenceFormation.countOfFragments("Because running alone"));
         }
 
-    }
+    }*/
 }
 
 

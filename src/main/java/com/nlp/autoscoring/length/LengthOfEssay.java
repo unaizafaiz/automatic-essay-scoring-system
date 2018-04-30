@@ -21,6 +21,7 @@ public class LengthOfEssay {
                 strTree = strTree.replace('(', '[');
                 strTree = strTree.replace(')', ']');
 
+            //Each [S in a tree is a count of sentence
             if(strTree.contains("[S")) {
                 countSentences++;
                 String[] splitStr = strTree.split(" ");
@@ -41,12 +42,14 @@ public class LengthOfEssay {
                             tagCount.put("verb", tagCount.get("verb") + 1);
                     }
                     if(i<splitStr.length-2){
+                        //checking if the conjunction is followed by a sentence tag [S then increase the sentence count
                         if(splitStr[i].equals("[CC") && splitStr[i+2].equals("[S")){
                             tagCount.put(splitStr[i], tagCount.get(splitStr[i]) + 1);
                         }
                     }
                 }
 
+                //if verb count is greater we choose the verb count rather than the conjunction to avoid calculating same multiple times
                 if (tagCount.get("verb") > tagCount.get("[CC")) {
                    // if (tagCount.containsKey("verb"))
                         if (tagCount.get("verb") > 1) {

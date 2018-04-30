@@ -178,7 +178,7 @@ public class StanfordParser {
     }
 
 
-    public  List<Tree> parse(String text) {
+    public static List<Tree> parse(String text) {
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize, ssplit, pos, lemma, parse");
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);

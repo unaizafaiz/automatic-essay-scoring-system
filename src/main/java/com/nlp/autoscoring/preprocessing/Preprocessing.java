@@ -42,6 +42,7 @@ public class Preprocessing {
         //Cleaning the string to avoid sentences of the form 'time.This'
         char lastChar = fileContents.charAt(fileContents.length()-1);
         Boolean check = false;
+        //if the last sentence has a "." only then adding it into the cleaned text too
         if(lastChar=='.')
             check = true;
         String[] fileClean = fileContents.split(rexp);

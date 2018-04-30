@@ -1,4 +1,4 @@
-# Project 1 for CS421 – University of Illinois at Chicago
+# Project for CS421 – University of Illinois at Chicago
 * Name 1: vsakur2@uic.edu 
 * Name 2: ufaiz2@uic.edu
 ## Setup
@@ -26,6 +26,20 @@
 
 4. Missing Verb: Using the Sentence Splitter from the StanfordParser, we are breaking the complete essay into sentences. 
 * We are then checking whether each sentence has all the six main verb tag in them i.e. {“VBZ”, “VBP”, “VBG”, “VBN”, “VB”, “VBD”}
+
+5. Sentence Formation:
+*
+*
+*
+
+6. Text Coherency:
+* Collecting all the pronouns from each sentence.
+* Checking each pronoun in the sentence is available in the output of CoReferenceChain output.
+
+7. Essay Validness:
+*
+*
+*
 
 ## Error Patterns observed:
 1. Some essays contained patterns of the form “ true.This ” i.e., the sentences did not have a space after a full stop. This gave rise to the problem of that pattern being tagged with a single POS tag. In order to overcome this problem, we preprocessed our file content to include a space after a full stop. 
