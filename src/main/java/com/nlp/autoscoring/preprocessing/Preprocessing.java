@@ -40,12 +40,19 @@ public class Preprocessing {
 
     private String addSpaces(String fileContents, String rexp, String punctuation) {
         //Cleaning the string to avoid sentences of the form 'time.This'
+        char lastChar = fileContents.charAt(fileContents.length()-1);
+        Boolean check = false;
+        if(lastChar=='.')
+            check = true;
         String[] fileClean = fileContents.split(rexp);
         fileContents = "";
         for(int index=0; index<fileClean.length; index++) {
             fileContents += fileClean[index];
             if(index!=fileClean.length-1){
                 fileContents+=punctuation+" ";
+            } else {
+                if(check)
+                    fileContents+=".";
             }
         }
         return fileContents;

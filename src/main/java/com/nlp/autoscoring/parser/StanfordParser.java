@@ -113,9 +113,31 @@ public class StanfordParser {
         return result;
     }
 
+    public static List<String> lemmatize(String text) {
+        Properties props = new Properties();
+        props.setProperty("annotators", "tokenize, ssplit, pos, lemma");
+        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
+
+        // create an empty Annotation just with the given text
+        Annotation document = new Annotation(text);
+
+        // run all Annotators on this text
+        pipeline.annotate(document);
+        List<CoreLabel> tokens = document.get(CoreAnnotations.TokensAnnotation.class);
+
+        List<String> result = new ArrayList<String>();
+        for (CoreLabel token : tokens) {
+            // this is the text of the token
+            String lemma = token.get(CoreAnnotations.LemmaAnnotation.class);
+            result.add(lemma);
+        }
+
+        return result;
+    }
+
     public static Map<Integer,CorefChain> coreferenceResolution(String text) {
         Properties props = new Properties();
-        props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, mention,coref");
+        props.setProperty("annotators", "tokenize, ssplit, pos, lemma, ner, parse, mention, coref");
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
         // create an empty Annotation just with the given text

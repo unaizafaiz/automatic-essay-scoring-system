@@ -1,15 +1,8 @@
 package com.nlp.autoscoring;
 
 import com.nlp.autoscoring.essayevaluation.Score;
-import com.nlp.autoscoring.parser.StanfordParser;
-import com.nlp.autoscoring.preprocessing.Preprocessing;
-import edu.stanford.nlp.dcoref.CorefChain;
-
-
-import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Map;
 import java.util.Scanner;
 
 
@@ -51,22 +44,17 @@ public class Main{ //extends JPanel{
         File folder = new File("./input/testing/essays");
         File[] filesInFolder = folder.listFiles();
 
-        //Score score = new Score();
-        //score.findCriteriaAndScore(filesInFolder);
-        Preprocessing preprocessing = new Preprocessing();
-        StanfordParser stp = new StanfordParser();
+       Score score = new Score();
+       score.findCriteriaAndScore(filesInFolder);
+
+       /* TopicCoherence topicCoherence = new TopicCoherence();
         for(File file: filesInFolder){
-            String a = file.toString();
-            System.out.println(a);
-            System.out.println(file.getName()+"-----------------");
-            String text = preprocessing.cleanFile(file);
-            Map<Integer,CorefChain> graph = stp.coreferenceResolution(text);
-            for (CorefChain entry : graph.values()) {
-                System.out.println(entry);
-            }
-            System.out.println();
-        }
-       // compareFinalGrade();
+
+                topicCoherence.checkforcoherence(file, new Preprocessing().cleanFile(file));
+
+        }*/
+
+       compareFinalGrade();
 
     }
 
