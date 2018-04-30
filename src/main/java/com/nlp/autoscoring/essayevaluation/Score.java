@@ -128,7 +128,7 @@ public class Score {
     }
 
     private double finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3, Float aFloat4, Float aFloat5, Float aFloat6) {
-         return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3) + aFloat4 + aFloat5 + aFloat6;
+         return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3) + (2 * aFloat4) + (2*aFloat5) + (3*aFloat6);
         // return (1.0639055 * aFloat) - (1.9360945 * aFloat1) + (0.0639049 * aFloat2) + (0.0639049 * aFloat3);
         // return (float) ( 0.27309  * aFloat -0.14183 * aFloat1 + 0.21198 * (aFloat2) + 0.02764  * aFloat3);
         // return (float) ( 0.22131  * aFloat -0.15951 * aFloat1 + 0.27341 * (aFloat2) + 0.01245  * aFloat3);
