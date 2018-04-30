@@ -44,17 +44,10 @@ public class Main{ //extends JPanel{
         File folder = new File("./input/testing/essays");
         File[] filesInFolder = folder.listFiles();
 
+
        Score score = new Score();
        score.findCriteriaAndScore(filesInFolder);
-
-       /* TopicCoherence topicCoherence = new TopicCoherence();
-        for(File file: filesInFolder){
-
-                topicCoherence.checkforcoherence(file, new Preprocessing().cleanFile(file));
-
-        }*/
-
-       compareFinalGrade();
+        compareFinalGrade();
 
     }
 

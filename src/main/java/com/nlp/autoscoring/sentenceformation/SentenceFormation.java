@@ -19,7 +19,7 @@ public class SentenceFormation {
         StanfordParser stp = new StanfordParser();
         int count = 0;
         List<String> sentences = StanfordParser.sentenceSplit(fileContents);
-        System.out.println("Total sentences in this essay: "+sentences.size());
+        //System.out.println("Total sentences in this essay: "+sentences.size());
         for(String sentence : sentences) {
             List<Tree> trees = stp.parse(sentence.toString());
             Set<String> determiner = Sets.newHashSet("all)", "both)", "half)", "either)", "neither)", "what)", "rather)", "quiet)");
@@ -28,7 +28,7 @@ public class SentenceFormation {
 
                 // System.out.println(strTree);
                 if (strTree.contains("(ROOT (FRAG")) {
-                    System.out.println(strTree);
+                   // System.out.println(strTree);
                     count++;
                 } else if (tree.toString().contains("(ROOT (SINV ")) {
                     Boolean check = false;
@@ -47,12 +47,12 @@ public class SentenceFormation {
 
 
                         if ((tdl.toString().contains("nsubj") || tdl.toString().contains("nsubjpass")) && (!tdl.toString().contains("dobj") && !tdl.toString().contains("aux"))) {
-                            System.out.println(tdl);
+                            //System.out.println(tdl);
                             count++;
                         }
                     }
                 } else if (strTree.contains("(ROOT (SBAR ")) {
-                    System.out.println(tree);
+                   // System.out.println(tree);
                     count++;
                 } else {
                     String[] tag = strTree.split(" ");
@@ -60,14 +60,14 @@ public class SentenceFormation {
                     for (int i = 0; i < tag.length; i++) { //
                         if (tag[i].toLowerCase().equals("because)") && tag[i + 1].equals("(S") && tag[i + 2].equals("(VP") && tag[i + 3].equals("(VBG")) {
                             count++;
-                            System.out.println(strTree);
+                           // System.out.println(strTree);
                         }
                         //identifies incorrect Determiner - Pronoun pairs of the form  -  the my, the your, an my etc excluding the determiners mentioned in the Set
                         if (i < tag.length - 3) {
                             Set<String> temp = Sets.newHashSet(tag[i + 1]);
                             if (tag[i].equals("(DT") && tag[i + 2].equals("(PRP$") && Sets.intersection(determiner, temp).isEmpty()) {
                                 count++;
-                                System.out.println(tag[i + 1] + " " + tag[i + 3]);
+                               // System.out.println(tag[i + 1] + " " + tag[i + 3]);
                             }
                         }
                     }
@@ -107,8 +107,8 @@ public class SentenceFormation {
                 sc.close();
             }
             SentenceFormation sentenceFormation = new SentenceFormation();
-            System.out.println(file.getName());
-            System.out.println(" -- "+sentenceFormation.countOfFragments(fileContents));
+           // System.out.println(file.getName());
+           // System.out.println(" -- "+sentenceFormation.countOfFragments(fileContents));
            // System.out.println(sentenceFormation.countOfFragments("Because running alone"));
         }
 

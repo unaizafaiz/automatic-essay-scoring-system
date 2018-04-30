@@ -367,7 +367,7 @@
 { [ adherent, noun.attribute:adherence,+ verb.contact:adhere1,+ verb.contact:adhere,+ ] (sticking fast) }
 { agglutinate, agglutinative, (united as if by glue) }
 { [ bondable, verb.contact:bond,+ ] (capable of holding together or cohering; as particles in a mass) }
-{ [ coherent, noun.state:coherency,+ noun.state:com.nlp.autoscoring.coherence,+ verb.contact:cohere,+ ] tenacious, (sticking together; "two coherent sheets"; "tenacious burrs") }
+{ [ coherent, noun.state:textCoherence,+ noun.state:com.nlp.autoscoring.coherence,+ verb.contact:cohere,+ ] tenacious, (sticking together; "two coherent sheets"; "tenacious burrs") }
 { [ cohesive, verb.contact:cohere,+ noun.state:cohesiveness,+ ] (causing cohesion; "a cohesive agent") }
 { [ gluey, noun.substance:glue,+ noun.attribute:gluiness,+ noun.attribute:glueyness,+ ] [ glutinous, noun.food:gluten,+ noun.attribute:glutinousness,+ noun.attribute:glutinosity,+ ] [ gummy, noun.substance:gum1,+ noun.attribute:gumminess,+ ] [ mucilaginous, noun.substance:mucilage1,+ noun.substance:mucilage,+ ] [ pasty, noun.substance:paste,+ ] [ sticky, noun.attribute:stickiness,+ ] [ viscid, noun.attribute:viscidness,+ noun.attribute:viscidity,+ ] viscous, (having the sticky properties of an adhesive) }
 { [ gooey, noun.substance:goo,+ ] icky, (soft and sticky) }
@@ -3353,7 +3353,7 @@
 ----
 { [ OFFSHORE, INSHORE,!] seaward, ((of winds) coming from the land; "offshore winds") }]
 
-[{ [ COHERENT, noun.attribute:coherency,+ noun.attribute:com.nlp.autoscoring.coherence,+ verb.stative:cohere1,+ verb.stative:cohere,+ INCOHERENT,!] [ consistent1, noun.attribute:consistence2,+ ] logical5, ordered6, LOGICAL,^ RATIONAL,^ (marked by an orderly, logical, and aesthetically consistent relation of parts; "a coherent argument") }
+[{ [ COHERENT, noun.attribute:textCoherence,+ noun.attribute:com.nlp.autoscoring.coherence,+ verb.stative:cohere1,+ verb.stative:cohere,+ INCOHERENT,!] [ consistent1, noun.attribute:consistence2,+ ] logical5, ordered6, LOGICAL,^ RATIONAL,^ (marked by an orderly, logical, and aesthetically consistent relation of parts; "a coherent argument") }
 { seamless, (perfectly consistent and coherent; "the novel's seamless plot") }
 ----
 { [ INCOHERENT, noun.state:incoherency,+ noun.state:incoherence,+ noun.communication:incoherence,+ COHERENT,!] ILLOGICAL,^ IRRATIONAL,^ (without logical or meaningful connection; "a turgid incoherent presentation") }
@@ -13426,7 +13426,7 @@
 { purposive, (having or showing or acting with a purpose or design; "purposive behavior") }]
 
 [{ [ RATIONAL, noun.attribute:rationalness,+ noun.state:rationality,+ IRRATIONAL,!] LOGICAL,^ REASONABLE,^ SANE,^ (consistent with or based on or using reason; "rational behavior"; "a process of rational inference"; "rational thought") }
-{ [ coherent, noun.attribute:coherency,+ ] [ logical, noun.attribute:logicalness,+ ] lucid, (capable of thinking and expressing yourself in a clear and consistent manner; "a lucid thinker"; "she was more coherent than she had been just after the accident") }
+{ [ coherent, noun.attribute:textCoherence,+ ] [ logical, noun.attribute:logicalness,+ ] lucid, (capable of thinking and expressing yourself in a clear and consistent manner; "a lucid thinker"; "she was more coherent than she had been just after the accident") }
 { demythologized, demythologised, (having mythical elements removed) }
 { [ intelligent, noun.cognition:intelligence,+ ] reasoning(a), thinking(a), (endowed with the capacity to reason) }
 { [ reasonable, noun.state:reasonableness,+ ] [ sane, noun.state:saneness,+ ] (marked by sound judgment; "sane nuclear policy") }

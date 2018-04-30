@@ -107,8 +107,8 @@ public class TopicCoherence {
             e.printStackTrace();
         }
 
-        System.out.println("Number of common nouns used "+count);
-        System.out.println("Total nouns in the essay "+nouns.size());
+       // System.out.println("Number of common nouns used "+count);
+       // System.out.println("Total nouns in the essay "+nouns.size());
         return count/(float)nouns.size();
     }
 
