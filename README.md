@@ -28,20 +28,23 @@
 * We are then checking whether each sentence has all the six main verb tag in them i.e. {“VBZ”, “VBP”, “VBG”, “VBN”, “VB”, “VBD”}
 
 5. Sentence Formation:
-*
-*
-*
+* Getting count of fragments in an essay
+* Patterns found from the training set like "the my" in sentence counted as an invalid sentence
+* Counting sentences with only subordinate clause and no main clause
+* SINV sentences checked for validity
 
 6. Text Coherency:
 * Collecting all the pronouns from each sentence.
 * Checking each pronoun in the sentence is available in the output of CoReferenceChain output.
 
-7. Essay Validness:
-*
-*
-*
+7. Essay Validness - Topic Coherence: Using wordnet to identify synonyms of nouns used in essay and topic
+* Get list of synonyms to the nouns in the topic sentence
+* Get list of synonyms to the nouns in complete essay
+* If the essay synonym intersects with noun then we say that the noun used is in line with the topic of essay and hence increment count
+* The score is mapped as ratio of nouns related to essay/ total nouns in essay
 
 ## Error Patterns observed:
 1. Some essays contained patterns of the form “ true.This ” i.e., the sentences did not have a space after a full stop. This gave rise to the problem of that pattern being tagged with a single POS tag. In order to overcome this problem, we preprocessed our file content to include a space after a full stop. 
 2. Some stop words are not recognized by the dictionary and hence a file name “wordStopper.txt” was created to ensure no stop word is being missed.
 3. The verbs “was” and “were” come under the tag VBD and they are the only exceptions considered while looking for Noun-Verb agreement. The rest of the VBD tagged words do not violate the Noun-Verb agreement.
+4. Some sentence had invalid word order of the form "the my"
