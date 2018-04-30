@@ -15,10 +15,10 @@ import java.util.Set;
 public class SentenceFormation {
 
 
-    public float countOfFragments(String fileContents) {
+    public float countOfFragments(String fileContents, List<String> sentences) {
         StanfordParser stp = new StanfordParser();
         int count = 0;
-        List<String> sentences = StanfordParser.sentenceSplit(fileContents);
+        //List<String> sentences = StanfordParser.sentenceSplit(fileContents);
         //System.out.println("Total sentences in this essay: "+sentences.size());
         for(String sentence : sentences) {
             List<Tree> trees = stp.parse(sentence.toString());

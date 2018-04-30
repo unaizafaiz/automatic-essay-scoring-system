@@ -11,10 +11,10 @@ public class LengthOfEssay {
 
     private static final Set<String> verbTags = com.google.common.collect.Sets.newHashSet( "[VBZ", "[VBP", "[VBD", "[VBN", "[VBG");
 
-    public int findLengthOfEssay(String fileContents){
-        StanfordParser stp = new StanfordParser();
+    public int findLengthOfEssay(String fileContents, List<Tree> trees){
+        //StanfordParser stp = new StanfordParser();
         int countSentences = 0;
-        List<Tree> trees = stp.parse(fileContents);
+        //List<Tree> trees = stp.parse(fileContents);
 
         for (Tree tree : trees) {
                 String strTree = tree.toString();

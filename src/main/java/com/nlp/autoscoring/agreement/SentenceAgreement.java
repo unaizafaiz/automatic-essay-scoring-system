@@ -14,10 +14,10 @@ public class SentenceAgreement {
 
     private static final Set<String> verbTags = Sets.newHashSet("VB", "VBZ", "VBP", "VBD", "VBN", "VBG");
 
-    public String countAgreementFailures(String file){
+    public String countAgreementFailures(String file, List<String> sentences){
         int count = 0;
         int vCount = 0;
-        List<String> sentences = StanfordParser.sentenceSplit(file);
+       // List<String> sentences = StanfordParser.sentenceSplit(file);
         for(String sentence : sentences) {
             Set<String> posTag = Sets.newHashSet(StanfordParser.posTagging(sentence));
             boolean isVerb = Sets.intersection(verbTags, posTag).isEmpty();

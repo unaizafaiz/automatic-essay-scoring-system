@@ -1,6 +1,10 @@
 package com.nlp.autoscoring;
 
 import com.nlp.autoscoring.essayevaluation.Score;
+import com.nlp.autoscoring.parser.StanfordParser;
+import com.nlp.autoscoring.preprocessing.Preprocessing;
+import com.nlp.autoscoring.spelling.SpellingChecker;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -54,6 +58,13 @@ public class Main{ //extends JPanel{
 
         //Comparing the result
         compareFinalGrade();
+
+       /* for(File file : filesInFolder) {
+            SpellingChecker spellingChecker = new SpellingChecker();
+            String text = new Preprocessing().cleanFile(file);
+            System.out.println(file.getName()+"-------");
+            spellingChecker.countSpellingMistakes(text, StanfordParser.tokenize(text),StanfordParser.posTagging(text));
+        }*/
 
     }
 

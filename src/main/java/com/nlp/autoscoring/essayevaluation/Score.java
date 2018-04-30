@@ -8,6 +8,8 @@ import com.nlp.autoscoring.parser.StanfordParser;
 import com.nlp.autoscoring.preprocessing.Preprocessing;
 import com.nlp.autoscoring.sentenceformation.SentenceFormation;
 import com.nlp.autoscoring.spelling.SpellingChecker;
+import edu.stanford.nlp.coref.data.CorefChain;
+import edu.stanford.nlp.trees.Tree;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,17 +51,27 @@ public class Score {
             Preprocessing preprocessing = new Preprocessing();
             fileContents = preprocessing.cleanFile(file);
 
+            //Calling parser to get tokens, parse tree, POS tags, lemmas and sentences
+            List<String> tokens = StanfordParser.tokenize(fileContents);
+            List<String> posTags = StanfordParser.posTagging(fileContents);
+            List<String> sentences = StanfordParser.sentenceSplit(fileContents);
+            List<String> lemma = StanfordParser.lemmatize(fileContents);
+            List<Tree> trees = StanfordParser.parse(fileContents);
+            Map<Integer, CorefChain> corefText = StanfordParser.coreferenceResolution(fileContents);
+
+
+
             //Getting the feature values for each essay
-            lengthMarks.put(file.getName(), (float) lengthOfEssay.findLengthOfEssay(fileContents)); // 1
-            String[] mistake = spellingChecker.countSpellingMistakes(fileContents).split(" ");
+            lengthMarks.put(file.getName(), (float) lengthOfEssay.findLengthOfEssay(fileContents, trees)); // 1
+            String[] mistake = spellingChecker.countSpellingMistakes(fileContents,tokens,posTags).split(" ");
             spellingMarks.put(file.getName(), (float) Integer.parseInt(mistake[0])); // 2
-            String verbCounts = sentenceAgreement.countAgreementFailures(fileContents);
+            String verbCounts = sentenceAgreement.countAgreementFailures(fileContents, sentences);
             String[] temp = verbCounts.split(" ");
             agreementMarks.put(file.getName(), (float) Integer.parseInt(temp[0])); // 3.1
             verbMissing.put(file.getName(), (float) Integer.parseInt(temp[1])); //3.2
-            sentenceForming.put(file.getName(), sentenceFormation.countOfFragments(fileContents)); //3.3
-            coherencyMarks.put(file.getName(), textCoherence.checkCoherency(fileContents, StanfordParser.coreferenceResolution(fileContents))); //4.1
-            topicCoherence.put(file.getName(),topicCoher.checkforcoherence(file,fileContents));//4.2
+            sentenceForming.put(file.getName(), sentenceFormation.countOfFragments(fileContents,sentences)); //3.3
+            coherencyMarks.put(file.getName(), textCoherence.checkCoherency(fileContents, corefText)); //4.1
+            topicCoherence.put(file.getName(),topicCoher.checkforcoherence(file,fileContents, posTags, lemma));//4.2
         }
 
         //Finding minumum and maximum of the feature values
@@ -76,9 +88,9 @@ public class Score {
             lengthMarks.put(file.getName(), (4 * ((lengthMarks.get(file.getName()) - Float.parseFloat(marksLength[0]))/(Float.parseFloat(marksLength[1]) - Float.parseFloat(marksLength[0]))))+1);
             spellingMarks.put(file.getName(), 4 * ((spellingMarks.get(file.getName()) - Float.parseFloat(marksSpelling[0]))/(Float.parseFloat(marksSpelling[1]) - Float.parseFloat(marksSpelling[0]))));
             agreementMarks.put(file.getName(), (4 * ((agreementMarks.get(file.getName()) - Float.parseFloat(marksAgree[0]))/(Float.parseFloat(marksAgree[1]) - Float.parseFloat(marksAgree[0]))))+1);
-            verbMissing.put(file.getName(), 5 - (4 * ((verbMissing.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksVerb[1]) - Float.parseFloat(marksVerb[0])))));
+            verbMissing.put(file.getName(),  5 - (4 * ((verbMissing.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksVerb[1]) - Float.parseFloat(marksVerb[0])))));
             sentenceForming.put(file.getName(), 5 - (4 * ((sentenceForming.get(file.getName()) - Float.parseFloat(marksVerb[0]))/(Float.parseFloat(marksSentence[1]) - Float.parseFloat(marksSentence[0])))));
-            coherencyMarks.put(file.getName(), 5 - (4 * ((coherencyMarks.get(file.getName()) - Float.parseFloat(marksCoherency[0]))/(Float.parseFloat(marksCoherency[1]) - Float.parseFloat(marksCoherency[0])))));
+            coherencyMarks.put(file.getName(),  5 - (4 * ((coherencyMarks.get(file.getName()) - Float.parseFloat(marksCoherency[0]))/(Float.parseFloat(marksCoherency[1]) - Float.parseFloat(marksCoherency[0])))));
             topicCoherence.put(file.getName(), (4 * ((topicCoherence.get(file.getName()) - Float.parseFloat(marksTopic[0]))/(Float.parseFloat(marksTopic[1]) - Float.parseFloat(marksTopic[0]))))+1);
             finalScores.put(file.getName(), (float) finalScoreCalculation(lengthMarks.get(file.getName()), spellingMarks.get(file.getName()), agreementMarks.get(file.getName()), verbMissing.get(file.getName()), sentenceForming.get(file.getName()), coherencyMarks.get(file.getName()), topicCoherence.get(file.getName())));
         }

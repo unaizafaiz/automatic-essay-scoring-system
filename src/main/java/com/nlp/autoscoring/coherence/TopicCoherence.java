@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class TopicCoherence {
-    public float checkforcoherence (File file, String fileContents) {
+    public float checkforcoherence (File file, String fileContents, List<String> tags, List<String> lemma) {
 
         //Getting topic from index file
         Scanner scanner = null;
@@ -38,10 +38,10 @@ public class TopicCoherence {
         scanner.close();
 
         //getting nouns in topic
-        HashSet<String> topicWordList = getNounList(topic);
+        HashSet<String> topicWordList = getNounList(topic, null,null);
 
-        //gettin list of nouns in essay
-        HashSet<String> nouns =  getNounList(fileContents);
+        //getting list of nouns in essay
+        HashSet<String> nouns =  getNounList(fileContents, tags, lemma);
 
 
         //WordNet initialization
@@ -117,10 +117,12 @@ public class TopicCoherence {
      * @param text
      * @return list of nouns
      */
-    private HashSet<String> getNounList(String text) {
+    private HashSet<String> getNounList(String text, List<String> tags, List<String> lemma) {
         HashSet<String> nouns =  new HashSet<>();
-        List<String> tags = StanfordParser.posTagging(text);
-        List<String> lemma  = StanfordParser.lemmatize(text);
+        if(tags==null && lemma==null) {
+           /* List<String>*/ tags = StanfordParser.posTagging(text);
+           /* List<String> */ lemma = StanfordParser.lemmatize(text);
+        }
         for(int index=0; index<lemma.size();index++){
             if(tags.get(index).contains("NN"))
                 nouns.add(lemma.get(index));

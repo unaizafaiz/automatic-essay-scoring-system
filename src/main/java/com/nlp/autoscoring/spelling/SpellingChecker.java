@@ -28,11 +28,11 @@ public class SpellingChecker {
     }
 
     // Counting the words which are misspelled checking if the words are present in the dictionary.txt or stop-words.txt
-    public String countSpellingMistakes(String fileName){
+    public String countSpellingMistakes(String fileName, List<String> tokenizedFileContents,List<String> posTaggedFileContents ){
         int mistakesCount = 0 ;
-        List<String> tokenizedFileContents = StanfordParser.tokenize(fileName);
-        List<String> posTaggedFileContents;
-        posTaggedFileContents = StanfordParser.posTagging(fileName);
+        //List<String> tokenizedFileContents = StanfordParser.tokenize(fileName);
+       // List<String> posTaggedFileContents;
+        //posTaggedFileContents = StanfordParser.posTagging(fileName);
         int wordCount = posTaggedFileContents.size();
         Set<String> tags = Sets.newHashSet("$","#","\"","(",")",",",".",":");
         //List<edu.stanford.nlp.trees.Tree> structure = StanfordParser.parse(fileContents);
@@ -47,7 +47,7 @@ public class SpellingChecker {
             }
         }
 
-        //System.out.println(mistakesCount);
-        return mistakesCount+" "+wordCount;
+       // System.out.println(mistakesCount+" "+wordCount);
+        return mistakesCount+" "+tokenizedFileContents.size();
     }
 }
