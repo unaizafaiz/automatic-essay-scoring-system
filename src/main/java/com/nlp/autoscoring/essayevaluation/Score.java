@@ -66,7 +66,7 @@ public class Score {
         String[] marksCoherency = minMaxFinder(coherencyMarks).split(" ");
         String[] marksTopic = minMaxFinder(topicCoherence).split(" ");
 
-        //normaliseing the feature values
+        //normalising the feature values and calculating final score
         for(File file:files){
             lengthMarks.put(file.getName(), (4 * ((lengthMarks.get(file.getName()) - Float.parseFloat(marksLength[0]))/(Float.parseFloat(marksLength[1]) - Float.parseFloat(marksLength[0]))))+1);
             spellingMarks.put(file.getName(), 4 * ((spellingMarks.get(file.getName()) - Float.parseFloat(marksSpelling[0]))/(Float.parseFloat(marksSpelling[1]) - Float.parseFloat(marksSpelling[0]))));
@@ -128,10 +128,10 @@ public class Score {
     }
 
     private double finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3, Float aFloat4, Float aFloat5, Float aFloat6) {
-         return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3) + aFloat4 + aFloat5 + aFloat6;
+         return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3) + (2 * aFloat4) + (2 * aFloat5) + (3 * aFloat6);
         // return (1.0639055 * aFloat) - (1.9360945 * aFloat1) + (0.0639049 * aFloat2) + (0.0639049 * aFloat3);
-        // return (float) ( 0.27309  * aFloat -0.14183 * aFloat1 + 0.21198 * (aFloat2) + 0.02764  * aFloat3);
-        // return (float) ( 0.22131  * aFloat -0.15951 * aFloat1 + 0.27341 * (aFloat2) + 0.01245  * aFloat3);
+        // return ((  0.27720  * aFloat) - (0.09944 * aFloat1) + (0.17453 * aFloat2) - (0.01569  * aFloat3) + (0.03670 *aFloat4) - (0.08948 * aFloat5) + (0.11589 * aFloat6));
+        // return ((  0.21431  * aFloat) - (0.04117 * aFloat1) + (0.19750 * aFloat2) - (0.03012  * aFloat3) + (0.04554 *aFloat4) - (0.08718 * aFloat5) + (0.20009 * aFloat6));
     }
 
     private HashMap<String, String> finalGradCalculation(HashMap<String, Float> finalScoresNormalised, HashMap<String, Float> finalScores, String[] minMaxScore, HashMap<String, String> grade){

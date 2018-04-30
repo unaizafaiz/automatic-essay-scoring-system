@@ -41,12 +41,12 @@ public class Main{ //extends JPanel{
     public static void main(String[] args){
         //FileChooser fs = new FileChooser();
         //File[] files = fs.getInput();
+        // File folder =  new File("/Users/unaizafaiz/Downloads/essays_dataset/essays/development");
         File folder = new File("./input/testing/essays");
         File[] filesInFolder = folder.listFiles();
 
-
-       Score score = new Score();
-       score.findCriteriaAndScore(filesInFolder);
+        Score score = new Score();
+        score.findCriteriaAndScore(filesInFolder);
         compareFinalGrade();
 
     }
