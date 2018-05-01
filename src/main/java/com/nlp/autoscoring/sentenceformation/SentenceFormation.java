@@ -68,12 +68,26 @@ public class SentenceFormation {
                            // System.out.println(strTree);
                         }
                         //identifies incorrect Determiner - Pronoun pairs of the form  -  the my, the your, an my etc excluding the determiners mentioned in the Set
-                        if (i < tag.length - 3) {
+                        else if (i < tag.length - 3) {
                             Set<String> temp = Sets.newHashSet(tag[i + 1]);
                             if (tag[i].equals("(DT") && tag[i + 2].equals("(PRP$") && Sets.intersection(determiner, temp).isEmpty()) {
                                 count++;
                                // System.out.println(tag[i + 1] + " " + tag[i + 3]);
                             }
+                        }
+
+                        else if(i < tag.length - 7){
+                            //Run on sentences - [SBAR [S [NP [PRP - independent clauses in one sentence or without a conjunction joining the two clauses
+                            if(tag[i].equals("(SBAR") && tag[i+2].equals("(S") && tag[i+4].equals("(NP") && tag[i+6].equals("(PRP")){
+                                count++;
+                                System.out.println(tag[i+1]+" "+tag[i+3]+" "+tag[i+5]+" "+tag[i+7]);
+                            }
+
+                        }
+                        //Fragments of the form - "The dog was waiting in the window when his owner got home. Then, excited, wagging his tail."
+                        else if(tag[i].equals("(ROOT") && tag[i+2].equals("(S") && tag[i+4].equals("(ADVP") && tag[i+6].equals("(RB")) {
+                            System.out.println(sentence);
+                            count++;
                         }
                     }
 

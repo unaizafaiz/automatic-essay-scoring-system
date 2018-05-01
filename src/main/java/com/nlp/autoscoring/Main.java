@@ -57,7 +57,7 @@ public class Main{ //extends JPanel{
         score.findCriteriaAndScore(filesInFolder);
 
         //Comparing the result
-        compareFinalGrade();
+        //compareFinalGrade();
 
        /* for(File file : filesInFolder) {
             SpellingChecker spellingChecker = new SpellingChecker();

@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ecf7ab1-c67e-4e57-9bd6-ce13eed2af2a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/nlp/autoscoring/sentenceformation/SentenceFormation.class" afterPath="$PROJECT_DIR$/target/classes/com/nlp/autoscoring/sentenceformation/SentenceFormation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essayscores.csv" afterPath="$PROJECT_DIR$/essayscores.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/result.txt" afterPath="$PROJECT_DIR$/output/result.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/agreement/SentenceAgreement.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/agreement/SentenceAgreement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/length/LengthOfEssay.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/length/LengthOfEssay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/spelling/SpellingChecker.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/spelling/SpellingChecker.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Score.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="92" column="208" lean-forward="false" selection-start-line="92" selection-start-column="208" selection-end-line="92" selection-end-column="208" />
+            <state relative-caret-position="638">
+              <caret line="168" column="8" lean-forward="true" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,8 +35,8 @@
       <file leaf-file-name="essayscores.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/essayscores.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="26" />
+            <state relative-caret-position="-536">
+              <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -59,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+            <state relative-caret-position="252">
+              <caret line="59" column="10" lean-forward="false" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,6 +71,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SentenceFormation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="79" column="145" lean-forward="false" selection-start-line="79" selection-start-column="145" selection-end-line="79" selection-end-column="145" />
               <folding />
             </state>
           </provider>
@@ -146,11 +151,11 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/agreement/SentenceAgreement.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/length/LengthOfEssay.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/spelling/SpellingChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" />
       </list>
     </option>
   </component>
@@ -192,24 +197,6 @@
             <path>
               <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
               <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-              <item name="testing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-              <item name="testing" type="462c0819:PsiDirectoryNode" />
-              <item name="essays" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -240,7 +227,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="autoscoring" type="462c0819:PsiDirectoryNode" />
-              <item name="essayevaluation" type="462c0819:PsiDirectoryNode" />
+              <item name="sentenceformation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
@@ -490,7 +477,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -523,7 +510,7 @@
         <state relative-caret-position="105">
           <caret line="10" column="87" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="87" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,7 +528,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -584,7 +571,7 @@
         <state relative-caret-position="45">
           <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -775,7 +762,7 @@
         <state relative-caret-position="210">
           <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -785,16 +772,8 @@
         <state relative-caret-position="432">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="17" column="77" lean-forward="false" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -838,16 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-993">
@@ -868,16 +837,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/essayscores.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="-536">
+          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="79" column="145" lean-forward="false" selection-start-line="79" selection-start-column="145" selection-end-line="79" selection-end-column="145" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="92" column="208" lean-forward="false" selection-start-line="92" selection-start-column="208" selection-end-line="92" selection-end-column="208" />
+        <state relative-caret-position="638">
+          <caret line="168" column="8" lean-forward="true" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="59" column="10" lean-forward="false" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
