@@ -2,164 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ecf7ab1-c67e-4e57-9bd6-ce13eed2af2a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1000434.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1000545.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1006488.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1009747.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1011962.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1017099.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1021965.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/10229.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/102695.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1034191.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1034797.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1038651.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1039104.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1045808.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/104767.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1051940.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1055820.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1063915.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1068953.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1069410.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1075554.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1075905.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1080849.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1083455.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1085090.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1091720.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1092969.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1105047.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1105962.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1113031.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1113660.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1114907.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/111601.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1126144.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1131331.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1134794.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1140045.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1140289.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1142608.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1143052.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1143655.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/114502.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1149147.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1156395.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/115956.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1165743.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1167441.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1168591.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1169824.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/testing/essays/1173379.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/essayscores.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1004355.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1007363.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1079196.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1086343.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1096747.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1109085.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1164913.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1174920.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1181356.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1223368.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1239289.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1249928.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1346734.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1365003.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1388870.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1392946.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1394540.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1414676.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1431839.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1447041.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1449555.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1453563.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1469088.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1599482.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1604419.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/162639.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1648484.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1691426.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1693042.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1703761.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1723586.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1728162.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1784031.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1790750.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1804641.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1812668.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1813924.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1827588.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1834502.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1851482.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/186616.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1876159.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1897285.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1942513.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1949465.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1971958.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1974703.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/1985615.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/206667.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/216672.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/219983.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/230893.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/232159.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/248917.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/265349.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/279212.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/302140.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/338351.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/339615.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/345396.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/373416.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/38209.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/392518.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/395987.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/404521.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/412197.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/425198.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/449267.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/450359.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/496928.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/526827.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/52951.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/535573.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/562823.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/586583.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/589458.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/594970.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/599905.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/609558.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/618384.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/643139.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/644250.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/656695.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/661830.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/67346.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/711394.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/71654.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/716766.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/746257.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/749940.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/755753.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/757891.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/806909.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/832751.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/844996.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/871631.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/913996.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/937403.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/input/testing/essays/990384.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/nlp/autoscoring/sentenceformation/SentenceFormation.class" afterPath="$PROJECT_DIR$/target/classes/com/nlp/autoscoring/sentenceformation/SentenceFormation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input/testing/index.csv" afterPath="$PROJECT_DIR$/input/testing/index.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/essayscores.csv" afterPath="$PROJECT_DIR$/essayscores.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/result.txt" afterPath="$PROJECT_DIR$/output/result.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/agreement/SentenceAgreement.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/agreement/SentenceAgreement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java" afterPath="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -175,8 +24,43 @@
       <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="66" column="96" lean-forward="false" selection-start-line="66" selection-start-column="96" selection-end-line="66" selection-end-column="96" />
+            <state relative-caret-position="773">
+              <caret line="143" column="31" lean-forward="true" selection-start-line="143" selection-start-column="31" selection-end-line="143" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="306">
+                <caret line="54" column="73" lean-forward="false" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/input/testing/index.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="129" lean-forward="false" selection-start-line="12" selection-start-column="129" selection-end-line="12" selection-end-column="129" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TopicCoherence.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="23" column="59" lean-forward="false" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -187,8 +71,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            <state relative-caret-position="269">
+              <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,31 +80,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SentenceAgreement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/agreement/SentenceAgreement.java">
+      <file leaf-file-name="result.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/output/result.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="209">
+              <caret line="49" column="64" lean-forward="false" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="essayscores.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="essayscores.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/essayscores.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="21" column="86" lean-forward="false" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="86" />
+            <state relative-caret-position="-1091">
+              <caret line="0" column="98" lean-forward="false" selection-start-line="0" selection-start-column="98" selection-end-line="0" selection-end-column="98" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="10229.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/input/testing/essays/10229.txt">
+      <file leaf-file-name="index.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/input/training/index.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -229,18 +113,18 @@
       <file leaf-file-name="SentenceFormation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="23" column="62" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpellingChecker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/spelling/SpellingChecker.java">
+      <file leaf-file-name="TextCoherence.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TextCoherence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -265,18 +149,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/output/result.txt" />
-        <option value="$PROJECT_DIR$/essayscores.csv" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/parser/StanfordParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/preprocessing/Preprocessing.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/length/LengthOfEssay.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/spelling/SpellingChecker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" />
         <option value="$PROJECT_DIR$/input/testing/index.csv" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/agreement/SentenceAgreement.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/essayscores.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java" />
       </list>
     </option>
   </component>
@@ -307,15 +191,91 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
               <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="executable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+              <item name="training" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoscoring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoscoring" type="462c0819:PsiDirectoryNode" />
+              <item name="coherence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Automatic-Scoring-System" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Automatic-Scoring-System" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="autoscoring" type="462c0819:PsiDirectoryNode" />
+              <item name="essayevaluation" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -483,7 +443,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -492,7 +452,6 @@
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -504,6 +463,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -530,7 +490,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26037195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -547,14 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/essayscores.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="86" lean-forward="false" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/preprocessing/Preprocessing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -718,16 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="645">
-            <caret line="43" column="78" lean-forward="false" selection-start-line="43" selection-start-column="78" selection-end-line="43" selection-end-column="78" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/length/LengthOfEssay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -739,10 +681,10 @@
     <entry file="file://$PROJECT_DIR$/input/testing/essays/1813924.txt" />
     <entry file="file://$PROJECT_DIR$/input/testing/essays/757891.txt" />
     <entry file="file://$PROJECT_DIR$/input/testing/essays/832751.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TextCoherence.java">
+    <entry file="file://$PROJECT_DIR$/input/testing/essays/10229.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="79" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -750,69 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/input/testing/essays/10229.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/input/testing/index.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="129" lean-forward="false" selection-start-line="12" selection-start-column="129" selection-end-line="12" selection-end-column="129" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/output/result.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
-          <caret line="49" column="64" lean-forward="false" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="66" column="96" lean-forward="false" selection-start-line="66" selection-start-column="96" selection-end-line="66" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,10 +703,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TextCoherence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="31" column="79" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/sentenceformation/SentenceFormation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="23" column="62" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="306">
+            <caret line="54" column="73" lean-forward="false" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/testing/index.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="129" lean-forward="false" selection-start-line="12" selection-start-column="129" selection-end-line="12" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/essayscores.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="21" column="86" lean-forward="false" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="86" />
+        <state relative-caret-position="-1091">
+          <caret line="0" column="98" lean-forward="false" selection-start-line="0" selection-start-column="98" selection-end-line="0" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/training/index.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/coherence/TopicCoherence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="23" column="59" lean-forward="false" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nlp/autoscoring/essayevaluation/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="143" column="31" lean-forward="true" selection-start-line="143" selection-start-column="31" selection-end-line="143" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output/result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="49" column="64" lean-forward="false" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
           <folding />
         </state>
       </provider>

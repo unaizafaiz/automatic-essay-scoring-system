@@ -28,12 +28,17 @@ public class TopicCoherence {
 
         String topic = "";
         assert scanner != null;
+        Boolean isHeadline=true;
         while (scanner.hasNext()) {
-            String newLine = scanner.nextLine();
-            String[] fileDetails = newLine.split(";");
-            String[] topicCol = fileDetails[1].split("\t");
-            if(fileDetails[0].contains(file.getName()))
-                topic=topicCol[2];
+            if(isHeadline) {
+                isHeadline=false;
+            }else {
+                String newLine = scanner.nextLine();
+                String[] fileDetails = newLine.split(";");
+                String[] topicCol = fileDetails[1].split("\t");
+                if (fileDetails[0].contains(file.getName()))
+                    topic = topicCol[2];
+            }
         }
         scanner.close();
 

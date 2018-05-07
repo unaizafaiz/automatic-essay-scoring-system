@@ -106,20 +106,20 @@ public class Score {
         System.out.println(newCoef);*/
 
 
-       HashMap<String, String> fileGrades = getExpectedGrades();
+      //HashMap<String, String> fileGrades = getExpectedGrades();
 
        // Writing output in result.txt file
         try {
             PrintWriter writer = new PrintWriter("./output/result.txt","UTF-8");
-            PrintWriter scoreEssay = new PrintWriter("./essayscores.csv","UTF-8");
+           // PrintWriter scoreEssay = new PrintWriter("./essayscores.csv","UTF-8");
             for (File file: files){
                 writer.println(file.getName()+";"+lengthMarks.get(file.getName())+";"+spellingMarks.get(file.getName())+";"+agreementMarks.get(file.getName())+";"+verbMissing.get(file.getName())+";"+sentenceForming.get(file.getName())+";"+coherencyMarks.get(file.getName()) +";"+topicCoherence.get(file.getName())+";"+finalScores.get(file.getName())+";"+grade.get(file.getName()));
-                scoreEssay.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+";"+sentenceForming.get(file.getName())+"; "+coherencyMarks.get(file.getName()) +"; "+topicCoherence.get(file.getName())+"; "+finalScores.get(file.getName())+"; "+finalScoresNormalised.get(file.getName())+"; "+grade.get(file.getName())+";"+fileGrades.get(file.getName()));
+               // scoreEssay.println(file.getName()+"; "+lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+";"+sentenceForming.get(file.getName())+"; "+coherencyMarks.get(file.getName()) +"; "+topicCoherence.get(file.getName())+"; "+finalScores.get(file.getName())+"; "+finalScoresNormalised.get(file.getName())+"; "+grade.get(file.getName())+";"+fileGrades.get(file.getName()));
 
                 //scoreFile.println(lengthMarks.get(file.getName())+"; "+spellingMarks.get(file.getName())+"; "+agreementMarks.get(file.getName())+"; "+verbMissing.get(file.getName())+"; 0; 0; "+finalScores.get(file.getName())+"; "+grade.get(file.getName()));
             }
             writer.close();
-            scoreEssay.close();
+           // scoreEssay.close();
             //scoreFile.close();
         } catch (FileNotFoundException | UnsupportedEncodingException e) {
             e.printStackTrace();
