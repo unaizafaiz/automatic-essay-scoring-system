@@ -142,10 +142,15 @@ public class Score {
         HashMap<String, String> fileGrades = new HashMap<>();
 
         assert scanner != null;
+        int count=0;
         while (scanner.hasNext()) {
-            String newLine = scanner.nextLine();
-            String[] fileDetails = newLine.split(";");
-            fileGrades.put(fileDetails[0],fileDetails[2]);
+            if(count==0) {
+                count++;
+            }else {
+                String newLine = scanner.nextLine();
+                String[] fileDetails = newLine.split(";");
+                fileGrades.put(fileDetails[0], fileDetails[2]);
+            }
         }
         scanner.close();
         return fileGrades;
@@ -164,7 +169,7 @@ public class Score {
      * @return final score
      */
     private double finalScoreCalculation(Float aFloat, Float aFloat1, Float aFloat2, Float aFloat3, Float aFloat4, Float aFloat5, Float aFloat6) {
-        // return (2 * aFloat) - (aFloat1) + (aFloat2) + (aFloat3) + (2 * aFloat4) + (2 * aFloat5) + (3 * aFloat6);
+        // return (2 * aFloat) - (aFloat1) + (aFloat2) + (0*aFloat3) + (2 * aFloat4) + (2 * aFloat5) + (3 * aFloat6);
         // return (1.0639055 * aFloat) - (1.9360945 * aFloat1) + (0.0639049 * aFloat2) + (0.0639049 * aFloat3);
          return ((  0.27720  * aFloat) - (0.09944 * aFloat1) + (0.17453 * aFloat2) - (0.01569  * aFloat3) + (0.03670 *aFloat4) - (0.08948 * aFloat5) + (0.11589 * aFloat6));
         // return ((  0.21431  * aFloat) - (0.04117 * aFloat1) + (0.19750 * aFloat2) - (0.03012  * aFloat3) + (0.04554 *aFloat4) - (0.08718 * aFloat5) + (0.20009 * aFloat6));

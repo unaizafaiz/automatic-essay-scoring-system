@@ -98,40 +98,6 @@ public class SentenceFormation {
         return count/(float) sentences.size(); //returning the percentage depending on overall size of essay
     }
 
-    /*public static void main(String args[]){
-        //File[] files = fs.getInput();
-       //File file = new File("./input/testing/essays/52951.txt");
-        //File[] files = fs.getInput();
-        File folder = new File("./input/testing/essays");
-        File[] filesInFolder = folder.listFiles();
-
-        for(File file: filesInFolder){
-           // Preprocessing preprocessing = new Preprocessing();
-           // String fileContents = preprocessing.cleanFile(file);
-            String fileContents = "";
-            if(file.getName().contains("1004355.txt") || file.getName().contains("586583.txt") || file.getName().contains("1469088.txt") || file.getName().contains("1174920.txt") || file.getName().contains("1648484.txt"))  {
-                fileContents = new Preprocessing().cleanFile(file);
-            } else {
-
-                Scanner sc = null;
-                try {
-                    sc = new Scanner(file);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                while (sc.hasNextLine()) {
-                    //temp = sc.nextLine();
-                    fileContents += sc.nextLine();
-                }
-                sc.close();
-            }
-            SentenceFormation sentenceFormation = new SentenceFormation();
-           // System.out.println(file.getName());
-           // System.out.println(" -- "+sentenceFormation.countOfFragments(fileContents));
-           // System.out.println(sentenceFormation.countOfFragments("Because running alone"));
-        }
-
-    }*/
 }
 
 
