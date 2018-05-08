@@ -55,7 +55,7 @@ public class TextCoherence {
         return count / totalCount;
     }
 
-    // Collecting all the pronouns co-referenced
+    // Collecting all the pronouns co-referenced which are mainly co-referenced but also considering pronouns which need not be co-referenced like "in 'OUR' world"
     private Map<Integer, List<String>> extractCorefPronoun(Map<Integer, CorefChain> corefText) {
         ListMultimap<Integer, String> result = ArrayListMultimap.create();
         for (int index : corefText.keySet()) {
@@ -67,6 +67,12 @@ public class TextCoherence {
                     String mentionWord = mention.mentionSpan;
                     if(Dictionaries.MentionType.PRONOMINAL.equals(mention.mentionType)){
                         result.put(sentenceNumber, mentionWord.toLowerCase());
+                    } else {
+                        for(String word : StanfordParser.tokenize(mentionWord)){
+                            if(pronoun.contains(word.toLowerCase())){
+                                result.put(sentenceNumber, word.toLowerCase());
+                            }
+                        }
                     }
                 }
             }
